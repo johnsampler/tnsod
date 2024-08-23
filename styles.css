@@ -1,6 +1,6 @@
 /* General styles for the body and layout */
 html, body {
-    height: 100%;
+    height: 100%; /* Ensure body takes full height */
     margin: 0;
 }
 
@@ -16,7 +16,6 @@ header {
     background-color: #333;
     padding: 10px;
     text-align: center;
-    position: relative;
 }
 
 header h1 {
@@ -38,8 +37,7 @@ header h1 {
 
 .container {
     display: flex;
-    flex-direction: row;
-    flex: 1;
+    flex: 1; /* Take up remaining space */
 }
 
 .sidebar {
@@ -80,7 +78,7 @@ header h1 {
 .main-content {
     flex: 1;
     padding: 20px;
-    margin-left: 250px;
+    margin-left: 250px; /* Adjust according to sidebar width */
 }
 
 .text-center {
@@ -90,19 +88,21 @@ header h1 {
 }
 
 .index-page .text-center {
-    margin-left: -100px;
+    margin-left: -100px; /* Shift text -100px to the left on the main page */
 }
 
+/* Text alignment for non-home pages */
 .left-align {
     text-align: left;
-    margin-left: 20px;
+    margin-left: 20px; /* Adjust as needed */
 }
 
 .page-content {
     padding: 20px;
-    margin-left: 0;
+    margin-left: 0; /* Remove margin if sidebar is not required */
 }
 
+/* Apply specific styling for different pages */
 .about-state .page-content,
 .about-el-duolingo .page-content,
 .word-of-the-day .page-content {
@@ -113,30 +113,30 @@ header h1 {
 .welcome-text {
     font-size: 2em;
     margin: 0;
-    position: relative;
-    left: -15px;
+    position: relative; /* Ensure positioning context */
+    left: -15px; /* Move text 15px to the left */
 }
 
 .explore-text {
     font-size: 1.2em;
     margin: 20px 0 0;
-    position: relative;
-    left: -20px;
+    position: relative; /* Ensure positioning context */
+    left: -20px; /* Move text 20px to the left */
 }
 
 .carousel {
     position: relative;
-    margin: 20px auto;
+    margin: 20px auto; /* Center carousel vertically */
     overflow: hidden;
     width: 100%;
-    max-width: 600px;
-    left: -15px;
+    max-width: 600px; /* Adjust as needed */
+    left: -15px; /* Move carousel 15px to the left */
 }
 
 .carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease;
-    will-change: transform;
+    will-change: transform; /* Improve performance */
 }
 
 .carousel-item {
@@ -145,11 +145,16 @@ header h1 {
 }
 
 .carousel-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    user-select: none;
-    -webkit-user-drag: none;
+    width: 100%; /* Ensure images fill the width of the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below images */
+    user-select: none; /* Prevent text selection and image dragging */
+    -webkit-user-drag: none; /* Disable image dragging on webkit browsers */
+}
+
+.carousel-item {
+    padding: 10px; /* Adjust as needed */
+    box-sizing: border-box;
 }
 
 footer {
@@ -158,9 +163,9 @@ footer {
     padding: 10px;
     text-align: center;
     position: sticky;
-    bottom: 0;
-    width: 100%;
-    margin-top: auto;
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Ensure it takes full width */
+    margin-top: auto; /* Push footer to the bottom of the container */
 }
 
 footer a {
@@ -172,42 +177,3 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Media queries for mobile devices */
-@media (max-width: 600px) {
-    .container {
-        flex-direction: column; /* Stack elements vertically */
-    }
-
-    .sidebar {
-        width: 100%;
-        position: relative; /* Change to relative */
-        transform: none; /* Make sidebar visible */
-        height: auto;
-        z-index: 1000; /* Ensure it stays on top */
-    }
-
-    .main-content {
-        margin-left: 0; /* Remove margin on mobile */
-        padding: 10px; /* Adjust padding */
-    }
-
-    .welcome-text {
-        font-size: 1.5em; /* Smaller text size for mobile */
-        left: 0; /* Remove horizontal offset */
-    }
-
-    .explore-text {
-        font-size: 1em; /* Smaller text size for mobile */
-        left: 0; /* Remove horizontal offset */
-    }
-
-    .carousel {
-        left: 0; /* Remove horizontal offset */
-        max-width: 100%; /* Full width for carousel on mobile */
-        margin: 0 auto; /* Center carousel horizontally */
-    }
-
-    footer {
-        font-size: 0.9em; /* Smaller font size for footer text */
-    }
-}
