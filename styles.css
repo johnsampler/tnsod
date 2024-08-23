@@ -37,6 +37,7 @@ header h1 {
 
 .container {
     display: flex;
+    flex-direction: row; /* Default layout for larger screens */
     flex: 1; /* Take up remaining space */
 }
 
@@ -179,16 +180,33 @@ footer a:hover {
 
 /* Media queries for mobile devices */
 @media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Stack header, sidebar, and main content vertically */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width for sidebar on mobile */
+        position: relative; /* Change to relative positioning */
+        transform: none; /* Make sidebar visible */
+        height: auto; /* Adjust height */
+    }
+
+    .main-content {
+        margin-left: 0; /* Remove margin on mobile */
+    }
+
     .welcome-text {
         font-size: 1.5em; /* Smaller text size for mobile */
+        left: 0; /* Remove horizontal offset */
     }
 
     .explore-text {
         font-size: 1em; /* Smaller text size for mobile */
+        left: 0; /* Remove horizontal offset */
     }
 
-    .carousel-image {
-        height: 200px; /* Adjust height of carousel images for mobile */
+    .carousel {
+        left: 0; /* Remove horizontal offset */
     }
 
     footer {
