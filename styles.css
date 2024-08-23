@@ -188,20 +188,21 @@ footer a:hover {
     }
 
     .welcome-text {
-        font-size: 1.5em; /* Smaller font size for mobile */
+        font-size: 1.2em; /* Smaller font size for mobile */
     }
 
     .explore-text {
-        font-size: 1em; /* Smaller font size for mobile */
+        font-size: 0.9em; /* Smaller font size for mobile */
     }
 
     .carousel {
         margin-left: 0; /* Center the carousel on mobile */
         max-width: 100%;
+        width: 100%; /* Full width for mobile */
     }
 
     .carousel-image {
-        height: auto; /* Allow images to scale properly */
+        height: 400px; /* Larger height for carousel images on mobile */
         width: 100%; /* Full width for mobile */
     }
 
