@@ -176,3 +176,34 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 768px) {
+    /* For mobile devices */
+
+    .welcome-text {
+        font-size: 1.5em; /* Smaller font size for mobile */
+        margin-left: 0; /* Adjust margin as needed */
+    }
+
+    .explore-text {
+        font-size: 1em; /* Smaller font size for mobile */
+        margin-left: 0; /* Adjust margin as needed */
+    }
+
+    .carousel {
+        max-width: 100%; /* Make carousel take full width on mobile */
+        margin-left: 0; /* Center align carousel on mobile */
+    }
+
+    .carousel-image {
+        height: auto; /* Adjust height to auto for proper scaling */
+        max-height: 200px; /* Optional: Set a max height for images */
+    }
+
+    /* Adjustments for the footer */
+    footer {
+        position: fixed; /* Keep footer at the bottom */
+        bottom: 0;
+        width: 100%;
+    }
+}
