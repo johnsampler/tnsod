@@ -45,9 +45,9 @@ header h1 {
 
 .container {
     display: flex;
-    flex-direction: row; /* Ensure sidebar and content are in a row */
-    height: calc(100vh - 40px); /* Full viewport height minus header height */
-    overflow: hidden; /* Prevent overflow */
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent internal overflow */
 }
 
 .sidebar {
@@ -88,7 +88,7 @@ header h1 {
 .main-content {
     flex: 1;
     padding: 20px;
-    margin-left: 250px; /* Adjust according to sidebar width */
+    margin-left: 250px;
     box-sizing: border-box;
     overflow: hidden; /* Prevent internal overflow */
 }
@@ -110,7 +110,7 @@ header h1 {
 
 .page-content {
     padding: 20px;
-    margin-left: 0; /* Remove margin if sidebar is not required */
+    margin-left: 0;
 }
 
 .about-state .page-content,
@@ -185,45 +185,4 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-
-/* Media queries for mobile devices */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.2em; /* Smaller text size for mobile */
-    }
-
-    .welcome-text {
-        font-size: 1.5em; /* Smaller text size for mobile */
-    }
-
-    .explore-text {
-        font-size: 1em; /* Smaller text size for mobile */
-    }
-
-    .carousel-image {
-        height: 200px; /* Adjust height of carousel images for mobile */
-    }
-
-    footer {
-        font-size: 0.9em; /* Smaller font size for footer text */
-    }
-
-    .container {
-        flex-direction: column; /* Stack sidebar and content vertically on mobile */
-    }
-
-    .sidebar {
-        width: 100%; /* Full width on mobile */
-        height: auto; /* Auto height on mobile */
-        transform: translateY(-100%); /* Hide sidebar on mobile initially */
-    }
-
-    .sidebar.show {
-        transform: translateY(0); /* Show sidebar when menu is toggled */
-    }
-
-    .main-content {
-        margin-left: 0; /* Reset margin-left on mobile */
-    }
 }
