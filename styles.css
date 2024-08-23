@@ -16,6 +16,7 @@ header {
     background-color: #333;
     padding: 10px;
     text-align: center;
+    position: relative;
 }
 
 header h1 {
@@ -175,4 +176,47 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        transform: translateY(-100%); /* Hide sidebar off-screen on mobile */
+    }
+
+    .sidebar.show {
+        transform: translateY(0); /* Show sidebar when toggled on mobile */
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .text-center {
+        margin-left: 0; /* Reset margin on mobile */
+    }
+
+    .welcome-text {
+        left: 0; /* Reset left positioning on mobile */
+        font-size: 1.5em; /* Adjust font size for mobile */
+    }
+
+    .explore-text {
+        left: 0; /* Reset left positioning on mobile */
+        font-size: 1em; /* Adjust font size for mobile */
+    }
+
+    .carousel {
+        left: 0; /* Reset left positioning on mobile */
+        max-width: 100%; /* Ensure carousel takes full width on mobile */
+    }
+
+    .carousel-image {
+        height: auto; /* Maintain aspect ratio */
+    }
 }
