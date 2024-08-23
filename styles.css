@@ -179,44 +179,44 @@ footer a:hover {
 }
 
 /* Mobile styles */
+/* Existing styles remain unchanged */
+
+/* Media query for mobile devices */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        transform: translateY(-100%); /* Hide sidebar off-screen on mobile */
-    }
-
-    .sidebar.show {
-        transform: translateY(0); /* Show sidebar when toggled on mobile */
-    }
-
-    .main-content {
-        margin-left: 0;
-    }
-
     .text-center {
-        margin-left: 0; /* Reset margin on mobile */
+        margin-left: 0; /* Center text for smaller screens */
     }
 
     .welcome-text {
-        left: 0; /* Reset left positioning on mobile */
-        font-size: 1.5em; /* Adjust font size for mobile */
+        font-size: 1.5em; /* Smaller font size for mobile */
     }
 
     .explore-text {
-        left: 0; /* Reset left positioning on mobile */
-        font-size: 1em; /* Adjust font size for mobile */
+        font-size: 1em; /* Smaller font size for mobile */
     }
 
     .carousel {
-        left: 0; /* Reset left positioning on mobile */
-        max-width: 100%; /* Ensure carousel takes full width on mobile */
+        margin-left: 0; /* Center the carousel on mobile */
+        max-width: 100%;
     }
 
     .carousel-image {
-        height: auto; /* Maintain aspect ratio */
+        height: auto; /* Allow images to scale properly */
+        width: 100%; /* Full width for mobile */
+    }
+
+    .sidebar {
+        width: 200px; /* Smaller sidebar width for mobile */
+    }
+
+    .main-content {
+        margin-left: 0; /* Remove margin-left on mobile */
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    footer {
+        position: relative; /* Ensure footer remains at bottom */
+        width: 100%;
+        padding: 15px; /* Adjust padding for mobile */
     }
 }
