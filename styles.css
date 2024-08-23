@@ -91,9 +91,6 @@ header h1 {
     margin-left: 250px;
     box-sizing: border-box;
     overflow: hidden; /* Prevent internal overflow */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
 }
 
 .text-center {
@@ -209,7 +206,6 @@ footer a:hover {
     .main-content {
         margin-left: 0; /* Remove left margin when sidebar is hidden */
         padding: 10px; /* Reduce padding for smaller screens */
-        align-items: center; /* Center content horizontally */
     }
 
     .text-center {
