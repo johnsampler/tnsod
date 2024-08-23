@@ -16,6 +16,7 @@ header {
     background-color: #333;
     padding: 10px;
     text-align: center;
+    position: relative;
 }
 
 header h1 {
@@ -207,6 +208,8 @@ footer a:hover {
 
     .carousel {
         left: 0; /* Remove horizontal offset */
+        max-width: 100%; /* Full width for carousel on mobile */
+        margin-left: 0; /* Center carousel horizontally */
     }
 
     footer {
