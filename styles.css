@@ -177,3 +177,21 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Media queries for mobile devices */
+@media (max-width: 600px) {
+    .welcome-text {
+        font-size: 1.5em; /* Smaller text size for mobile */
+    }
+
+    .explore-text {
+        font-size: 1em; /* Smaller text size for mobile */
+    }
+
+    .carousel-image {
+        height: 200px; /* Adjust height of carousel images for mobile */
+    }
+
+    footer {
+        font-size: 0.9em; /* Smaller font size for footer text */
+    }
+}
