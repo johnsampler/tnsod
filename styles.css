@@ -6,7 +6,7 @@
 }
 
 html, body {
-    height: 100%; /* Ensure body takes full height */
+    height: 100%;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
@@ -16,6 +16,7 @@ body {
     color: #e0e0e0;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Prevent vertical scroll if not needed */
 }
 
 header {
@@ -24,11 +25,12 @@ header {
     text-align: center;
     position: relative;
     width: 100%; /* Full width */
+    z-index: 1001;
 }
 
 header h1 {
     color: #e0e0e0;
-    font-size: 1.5em; /* Adjust size for mobile */
+    font-size: 1.5em;
 }
 
 .menu-toggle {
@@ -40,14 +42,13 @@ header h1 {
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 1001;
 }
 
 .container {
     display: flex;
-    flex-direction: column; /* Stack sidebar and main content vertically */
-    height: calc(100vh - 40px); /* Full viewport height minus header height */
-    overflow: hidden; /* Prevent overflow within the container */
+    flex-direction: column;
+    min-height: calc(100vh - 40px); /* Adjusted for header height */
+    overflow: hidden; /* Prevent overflow */
 }
 
 .sidebar {
@@ -98,7 +99,7 @@ header h1 {
 }
 
 .index-page .text-center {
-    margin-left: -100px; /* Shift text -100px to the left on the main page */
+    margin-left: -100px;
 }
 
 .left-align {
@@ -134,9 +135,9 @@ header h1 {
 
 .carousel {
     position: relative;
-    margin: 20px auto; /* Center carousel vertically */
+    margin: 20px auto;
     overflow: hidden;
-    width: calc(100% - 30px); /* Full width minus margins */
+    width: calc(100% - 30px);
     max-width: 600px;
     left: -15px;
 }
