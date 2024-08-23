@@ -1,8 +1,13 @@
-/* General styles for the body and layout */
-html, body {
-    height: 100%; /* Ensure body takes full height */
+/* Reset default margins and paddings */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html, body {
+    height: 100%; /* Ensure body takes full height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
@@ -11,7 +16,6 @@ body {
     color: #e0e0e0;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 header {
@@ -20,11 +24,9 @@ header {
     text-align: center;
     position: relative;
     width: 100%; /* Full width */
-    box-sizing: border-box; /* Include padding in width */
 }
 
 header h1 {
-    margin: 0;
     color: #e0e0e0;
     font-size: 1.5em; /* Adjust size for mobile */
 }
@@ -45,6 +47,7 @@ header h1 {
     display: flex;
     flex-direction: column; /* Stack sidebar and main content vertically */
     height: calc(100vh - 40px); /* Full viewport height minus header height */
+    overflow: hidden; /* Prevent overflow within the container */
 }
 
 .sidebar {
@@ -66,7 +69,6 @@ header h1 {
 
 .sidebar nav ul {
     list-style-type: none;
-    padding: 0;
 }
 
 .sidebar nav ul li {
@@ -86,7 +88,7 @@ header h1 {
     flex: 1;
     padding: 20px;
     margin-left: 250px; /* Adjust according to sidebar width */
-    box-sizing: border-box; /* Include padding in width */
+    box-sizing: border-box;
 }
 
 .text-center {
@@ -99,18 +101,16 @@ header h1 {
     margin-left: -100px; /* Shift text -100px to the left on the main page */
 }
 
-/* Text alignment for non-home pages */
 .left-align {
     text-align: left;
-    margin-left: 20px; /* Adjust as needed */
+    margin-left: 20px;
 }
 
 .page-content {
     padding: 20px;
-    margin-left: 0; /* Remove margin if sidebar is not required */
+    margin-left: 0;
 }
 
-/* Apply specific styling for different pages */
 .about-state .page-content,
 .about-el-duolingo .page-content,
 .word-of-the-day .page-content {
@@ -121,15 +121,15 @@ header h1 {
 .welcome-text {
     font-size: 2em;
     margin: 0;
-    position: relative; /* Ensure positioning context */
-    left: -15px; /* Move text 15px to the left */
+    position: relative;
+    left: -15px;
 }
 
 .explore-text {
     font-size: 1.2em;
     margin: 20px 0 0;
-    position: relative; /* Ensure positioning context */
-    left: -20px; /* Move text 20px to the left */
+    position: relative;
+    left: -20px;
 }
 
 .carousel {
@@ -137,14 +137,14 @@ header h1 {
     margin: 20px auto; /* Center carousel vertically */
     overflow: hidden;
     width: calc(100% - 30px); /* Full width minus margins */
-    max-width: 600px; /* Adjust as needed */
-    left: -15px; /* Move carousel 15px to the left */
+    max-width: 600px;
+    left: -15px;
 }
 
 .carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease;
-    will-change: transform; /* Improve performance */
+    will-change: transform;
 }
 
 .carousel-item {
@@ -153,15 +153,15 @@ header h1 {
 }
 
 .carousel-image {
-    width: 100%; /* Ensure images fill the width of the container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any extra space below images */
-    user-select: none; /* Prevent text selection and image dragging */
-    -webkit-user-drag: none; /* Disable image dragging on webkit browsers */
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .carousel-item {
-    padding: 10px; /* Adjust as needed */
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -171,9 +171,9 @@ footer {
     padding: 10px;
     text-align: center;
     position: sticky;
-    bottom: 0; /* Stick to the bottom */
-    width: 100%; /* Ensure it takes full width */
-    margin-top: auto; /* Push footer to the bottom of the container */
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
 }
 
 footer a {
@@ -185,25 +185,24 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Media queries for mobile devices */
 @media (max-width: 600px) {
     header h1 {
-        font-size: 1.2em; /* Smaller text size for mobile */
+        font-size: 1.2em;
     }
 
     .welcome-text {
-        font-size: 1.5em; /* Smaller text size for mobile */
+        font-size: 1.5em;
     }
 
     .explore-text {
-        font-size: 1em; /* Smaller text size for mobile */
+        font-size: 1em;
     }
 
     .carousel-image {
-        height: 200px; /* Adjust height of carousel images for mobile */
+        height: 200px;
     }
 
     footer {
-        font-size: 0.9em; /* Smaller font size for footer text */
+        font-size: 0.9em;
     }
 }
