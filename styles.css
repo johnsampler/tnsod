@@ -1,19 +1,20 @@
 /* General styles for the body and layout */
+html, body {
+    height: 100%; /* Ensure body takes full height */
+    margin: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #1a1a1a;
     color: #e0e0e0;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 header {
     background-color: #333;
     padding: 10px;
-    position: relative;
     text-align: center;
 }
 
@@ -36,7 +37,7 @@ header h1 {
 
 .container {
     display: flex;
-    flex: 1;
+    flex: 1; /* Take up remaining space */
 }
 
 .sidebar {
@@ -87,7 +88,7 @@ header h1 {
 }
 
 .index-page .text-center {
-    margin-left: -85px; /* Adjust as needed */
+    margin-left: -100px; /* Shift text -100px to the left on the main page */
 }
 
 /* Text alignment for non-home pages */
@@ -112,27 +113,30 @@ header h1 {
 .welcome-text {
     font-size: 2em;
     margin: 0;
-    margin-left: -15px; /* Shift left 15px */
+    position: relative; /* Ensure positioning context */
+    left: -15px; /* Move text 15px to the left */
 }
 
 .explore-text {
     font-size: 1.2em;
     margin: 20px 0 0;
-    margin-left: -20px; /* Shift left 20px */
+    position: relative; /* Ensure positioning context */
+    left: -20px; /* Move text 20px to the left */
 }
 
 .carousel {
     position: relative;
-    margin-top: 20px;
+    margin: 20px auto; /* Center carousel vertically */
     overflow: hidden;
     width: 100%;
-    max-width: 600px;
-    margin-left: 400px; /* Adjust margin as needed */
+    max-width: 600px; /* Adjust as needed */
+    left: -15px; /* Move carousel 15px to the left */
 }
 
 .carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease;
+    will-change: transform; /* Improve performance */
 }
 
 .carousel-item {
@@ -141,21 +145,16 @@ header h1 {
 }
 
 .carousel-image {
-    width: 100%;
-    height: 300px; /* Adjust height as needed */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    object-fit: cover; /* Ensure images cover carousel area */
+    width: 100%; /* Ensure images fill the width of the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below images */
+    user-select: none; /* Prevent text selection and image dragging */
+    -webkit-user-drag: none; /* Disable image dragging on webkit browsers */
 }
 
-.carousel-caption {
-    text-align: center;
-    color: #e0e0e0;
-    margin-top: 10px;
+.carousel-item {
+    padding: 10px; /* Adjust as needed */
+    box-sizing: border-box;
 }
 
 footer {
@@ -164,48 +163,17 @@ footer {
     padding: 10px;
     text-align: center;
     position: sticky;
-    bottom: 0;
-    width: 100%;
-    margin-top: auto; /* Push footer to the bottom of the page */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Ensure it takes full width */
+    margin-top: auto; /* Push footer to the bottom of the container */
 }
 
 footer a {
     color: #e0e0e0;
     text-decoration: none;
-    margin-left: 45px;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 768px) {
-    /* For mobile devices */
-
-    .welcome-text {
-        font-size: 1.2em; /* Smaller font size for mobile */
-        margin-left: 0; /* Adjust margin as needed */
-    }
-
-    .explore-text {
-        font-size: 0.9em; /* Smaller font size for mobile */
-        margin-left: 0; /* Adjust margin as needed */
-    }
-
-    .carousel {
-        max-width: 90%; /* Make carousel slightly smaller on mobile */
-        margin-left: 5%; /* Center align carousel on mobile */
-    }
-
-    .carousel-image {
-        height: auto; /* Adjust height to auto for proper scaling */
-        max-height: 200px; /* Optional: Set a max height for images */
-    }
-
-    /* Footer adjustments for small screens */
-    footer {
-        position: fixed; /* Keep footer at the bottom */
-        bottom: 0;
-        width: 100%;
-    }
-}
