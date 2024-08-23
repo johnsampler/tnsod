@@ -183,6 +183,7 @@ footer a:hover {
         position: relative; /* Change to relative */
         transform: none; /* Make sidebar visible */
         height: auto;
+        z-index: 1000; /* Ensure it stays on top */
     }
 
     .main-content {
