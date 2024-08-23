@@ -20,19 +20,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateCarousel() {
-        // Safely update the carousel transform without using eval()
         carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
     function nextSlide() {
         currentIndex++;
         if (currentIndex >= totalItems + 1) {
-            carouselWrapper.style.transition = 'none'; // Disable transition for instant jump
+            // Disable transition for instant jump
+            carouselWrapper.style.transition = 'none'; 
             currentIndex = 1; // Jump to the first real item
             carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
             // Force reflow to reset transition
             carouselWrapper.offsetHeight;
-            carouselWrapper.style.transition = 'transform 0.5s ease'; // Re-enable transition
+
+            // Re-enable transition and smoothly move to the first item
+            setTimeout(() => {
+                carouselWrapper.style.transition = 'transform 0.5s ease';
+                updateCarousel();
+            }, 50); // Small timeout to ensure transition reset
         } else {
             updateCarousel();
         }
@@ -41,19 +47,25 @@ document.addEventListener('DOMContentLoaded', function() {
     function prevSlide() {
         currentIndex--;
         if (currentIndex < 0) {
-            carouselWrapper.style.transition = 'none'; // Disable transition for instant jump
+            // Disable transition for instant jump
+            carouselWrapper.style.transition = 'none';
             currentIndex = totalItems - 1; // Jump to the last real item
             carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
             // Force reflow to reset transition
             carouselWrapper.offsetHeight;
-            carouselWrapper.style.transition = 'transform 0.5s ease'; // Re-enable transition
+
+            // Re-enable transition and smoothly move to the last item
+            setTimeout(() => {
+                carouselWrapper.style.transition = 'transform 0.5s ease';
+                updateCarousel();
+            }, 50); // Small timeout to ensure transition reset
         } else {
             updateCarousel();
         }
     }
 
     function startAutoScroll() {
-        // Using setInterval with a function reference, which is safe
         return setInterval(nextSlide, autoScrollInterval);
     }
 
