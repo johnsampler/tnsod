@@ -2,6 +2,8 @@
 html, body {
     height: 100%; /* Ensure body takes full height */
     margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
@@ -16,6 +18,8 @@ header {
     background-color: #333;
     padding: 10px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
 }
 
 header h1 {
@@ -38,6 +42,7 @@ header h1 {
 .container {
     display: flex;
     flex: 1; /* Take up remaining space */
+    min-height: calc(100vh - 60px); /* Adjust based on header/footer height */
 }
 
 .sidebar {
@@ -79,6 +84,7 @@ header h1 {
     flex: 1;
     padding: 20px;
     margin-left: 250px; /* Adjust according to sidebar width */
+    box-sizing: border-box;
 }
 
 .text-center {
@@ -177,3 +183,21 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Media queries for mobile devices */
+@media (max-width: 600px) {
+    .welcome-text {
+        font-size: 1.5em; /* Smaller text size for mobile */
+    }
+
+    .explore-text {
+        font-size: 1em; /* Smaller text size for mobile */
+    }
+
+    .carousel-image {
+        height: 200px; /* Adjust height of carousel images for mobile */
+    }
+
+    footer {
+        font-size: 0.9em; /* Smaller font size for footer text */
+    }
+}
