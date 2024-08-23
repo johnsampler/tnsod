@@ -1,6 +1,6 @@
 /* General styles for the body and layout */
 html, body {
-    height: 100%; /* Ensure body takes full height */
+    height: 100%;
     margin: 0;
 }
 
@@ -38,8 +38,8 @@ header h1 {
 
 .container {
     display: flex;
-    flex-direction: row; /* Default layout for larger screens */
-    flex: 1; /* Take up remaining space */
+    flex-direction: row;
+    flex: 1;
 }
 
 .sidebar {
@@ -80,7 +80,7 @@ header h1 {
 .main-content {
     flex: 1;
     padding: 20px;
-    margin-left: 250px; /* Adjust according to sidebar width */
+    margin-left: 250px;
 }
 
 .text-center {
@@ -90,21 +90,19 @@ header h1 {
 }
 
 .index-page .text-center {
-    margin-left: -100px; /* Shift text -100px to the left on the main page */
+    margin-left: -100px;
 }
 
-/* Text alignment for non-home pages */
 .left-align {
     text-align: left;
-    margin-left: 20px; /* Adjust as needed */
+    margin-left: 20px;
 }
 
 .page-content {
     padding: 20px;
-    margin-left: 0; /* Remove margin if sidebar is not required */
+    margin-left: 0;
 }
 
-/* Apply specific styling for different pages */
 .about-state .page-content,
 .about-el-duolingo .page-content,
 .word-of-the-day .page-content {
@@ -115,30 +113,30 @@ header h1 {
 .welcome-text {
     font-size: 2em;
     margin: 0;
-    position: relative; /* Ensure positioning context */
-    left: -15px; /* Move text 15px to the left */
+    position: relative;
+    left: -15px;
 }
 
 .explore-text {
     font-size: 1.2em;
     margin: 20px 0 0;
-    position: relative; /* Ensure positioning context */
-    left: -20px; /* Move text 20px to the left */
+    position: relative;
+    left: -20px;
 }
 
 .carousel {
     position: relative;
-    margin: 20px auto; /* Center carousel vertically */
+    margin: 20px auto;
     overflow: hidden;
     width: 100%;
-    max-width: 600px; /* Adjust as needed */
-    left: -15px; /* Move carousel 15px to the left */
+    max-width: 600px;
+    left: -15px;
 }
 
 .carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease;
-    will-change: transform; /* Improve performance */
+    will-change: transform;
 }
 
 .carousel-item {
@@ -147,16 +145,11 @@ header h1 {
 }
 
 .carousel-image {
-    width: 100%; /* Ensure images fill the width of the container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any extra space below images */
-    user-select: none; /* Prevent text selection and image dragging */
-    -webkit-user-drag: none; /* Disable image dragging on webkit browsers */
-}
-
-.carousel-item {
-    padding: 10px; /* Adjust as needed */
-    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 footer {
@@ -165,9 +158,9 @@ footer {
     padding: 10px;
     text-align: center;
     position: sticky;
-    bottom: 0; /* Stick to the bottom */
-    width: 100%; /* Ensure it takes full width */
-    margin-top: auto; /* Push footer to the bottom of the container */
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
 }
 
 footer a {
@@ -182,18 +175,19 @@ footer a:hover {
 /* Media queries for mobile devices */
 @media (max-width: 600px) {
     .container {
-        flex-direction: column; /* Stack header, sidebar, and main content vertically */
+        flex-direction: column; /* Stack elements vertically */
     }
 
     .sidebar {
-        width: 100%; /* Full width for sidebar on mobile */
-        position: relative; /* Change to relative positioning */
+        width: 100%;
+        position: relative; /* Change to relative */
         transform: none; /* Make sidebar visible */
-        height: auto; /* Adjust height */
+        height: auto;
     }
 
     .main-content {
         margin-left: 0; /* Remove margin on mobile */
+        padding: 10px; /* Adjust padding */
     }
 
     .welcome-text {
@@ -209,7 +203,7 @@ footer a:hover {
     .carousel {
         left: 0; /* Remove horizontal offset */
         max-width: 100%; /* Full width for carousel on mobile */
-        margin-left: 0; /* Center carousel horizontally */
+        margin: 0 auto; /* Center carousel horizontally */
     }
 
     footer {
