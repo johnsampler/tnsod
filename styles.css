@@ -202,7 +202,7 @@ footer a:hover {
     }
 
     .carousel-image {
-        height: 400px; /* Larger height for carousel images on mobile */
+        height: 1980px; /* Larger height for carousel images on mobile */
         width: 100%; /* Full width for mobile */
     }
 
