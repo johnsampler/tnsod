@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateCarousel() {
+        // Safely update the carousel transform without using eval()
         carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function startAutoScroll() {
+        // Using setInterval with a function reference, which is safe
         return setInterval(nextSlide, autoScrollInterval);
     }
 
