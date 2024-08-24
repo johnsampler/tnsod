@@ -31,6 +31,34 @@ header h1 {
     font-size: 1.5em; /* Adjust size for mobile */
 }
 
+/* Additional styles for commandments */
+#commandment-container {
+    position: fixed; /* Position it at the bottom of the viewport */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Match the sidebar color or choose a suitable color */
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Styles for commandment text with fading effect */
+#commandment-text {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Reduced duration for quicker fade */
+    font-size: 1.5em;
+    text-align: center;
+    margin: 20px;
+}
+
+/* Class to show commandment text with fade in effect */
+#commandment-text.show {
+    opacity: 1;
+}
+
+
+
 .menu-toggle {
     background: none;
     border: none;
@@ -149,7 +177,7 @@ header h1 {
 
 .carousel-inner {
     display: flex;
-    transition: transform 0.4s ease; /* Adjust transition duration */
+    transition: transform 0.5s ease;
     will-change: transform; /* Improve performance */
 }
 
@@ -166,6 +194,29 @@ header h1 {
     -webkit-user-drag: none; /* Disable image dragging on webkit browsers */
 }
 
+/* Commandments styles */
+.commandments {
+    position: fixed;
+    bottom: 10px; /* Adjust as needed */
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.commandment-text {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Fade effect */
+    font-size: 1.5em; /* Adjust as needed */
+    margin: 0;
+}
+
+.commandment-text.show {
+    opacity: 1;
+}
+
 /* Additional Mobile Adjustments */
 
 /* Ensure content is centered and fits well on mobile devices */
@@ -175,12 +226,6 @@ header h1 {
     .index-page .text-center {
         margin-left: 0; /* Remove any left margin */
         padding: 0 10px; /* Add padding for spacing */
-    }
-
-    /* Move the explore text 5px to the right on mobile */
-    .index-page .explore-text {
-        position: relative;
-        left: -5px; /* Move text -5px to the right */
     }
 
     /* Ensure main content fits within viewport */
@@ -202,11 +247,11 @@ header h1 {
         transform: translateX(0); /* Show sidebar */
     }
 
-    /* Carousel adjustments for mobile */
+    /* Carousel adjustments */
     .carousel {
         width: 100%; /* Full width */
         margin: 0 auto; /* Center carousel */
-        left: -5px; /* Move carousel 5px to the right */
+        left: 0; /* Remove any left offset */
     }
 
     .carousel-inner {
