@@ -219,10 +219,15 @@ header h1 {
 
     /* Menu toggle adjustments */
     .menu-toggle {
-        display: block; /* Ensure visibility */
-        position: absolute;
-        top: 10px;
-        left: 10px; /* Ensure it is visible and accessible */
+        display: block; /* Ensure it's visible on mobile */
+        position: fixed; /* Fixed positioning */
+        top: 10px; /* Adjust as needed */
+        left: 10px; /* Align it to the left */
+        z-index: 1001; /* Ensure it's above other elements */
+        font-size: 28px; /* Adjust size as needed */
+        background: none; /* Remove default button styling */
+        border: none; /* Remove default border */
+        cursor: pointer; /* Pointer cursor for clickability */
     }
 }
 
