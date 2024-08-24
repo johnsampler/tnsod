@@ -6,71 +6,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalImages = images.length;
     let currentIndex = 0;
 
-    // Clone all images to create a seamless infinite loop
     if (carouselInner) {
+        // Clone images for seamless loop
         carouselInner.innerHTML += carouselInner.innerHTML;
 
-        function updateCarousel() {
-            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-
+        // Function to move the carousel to the next image
         function moveCarousel() {
             currentIndex++;
             carouselInner.style.transition = 'transform 1s ease';
-            updateCarousel();
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
 
+            // Reset to the first set of images seamlessly
             if (currentIndex === totalImages) {
                 setTimeout(() => {
                     carouselInner.style.transition = 'none'; // Disable transition for reset
+                    carouselInner.style.transform = 'translateX(0)';
                     currentIndex = 0;
-                    updateCarousel();
                 }, 1000); // Match this delay with the transition duration
             }
         }
 
+        // Set interval to change images automatically every 3 seconds
         setInterval(moveCarousel, 3000);
-
-        function onDragStart(event) {
-            const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-            startX = clientX;
-            startTranslateX = -currentIndex * carouselInner.offsetWidth;
-            carouselInner.style.transition = 'none'; // Disable transition during drag
-        }
-
-        function onDragMove(event) {
-            if (startX === undefined) return;
-            const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-            const moveX = clientX - startX;
-            carouselInner.style.transform = `translateX(${startTranslateX + moveX}px)`;
-        }
-
-        function onDragEnd(event) {
-            if (startX === undefined) return;
-            const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-            const moveX = clientX - startX;
-            const threshold = carouselInner.offsetWidth / 3;
-            if (Math.abs(moveX) > threshold) {
-                currentIndex = moveX < 0 ? (currentIndex + 1) % totalImages : (currentIndex - 1 + totalImages) % totalImages;
-            }
-            carouselInner.style.transition = 'transform 1s ease'; // Re-enable transition
-            updateCarousel();
-            startX = undefined; // Reset for next drag
-        }
-
-        carouselInner.addEventListener('mousedown', onDragStart);
-        carouselInner.addEventListener('mousemove', onDragMove);
-        carouselInner.addEventListener('mouseup', onDragEnd);
-        carouselInner.addEventListener('mouseleave', onDragEnd);
-
-        carouselInner.addEventListener('touchstart', onDragStart);
-        carouselInner.addEventListener('touchmove', onDragMove);
-        carouselInner.addEventListener('touchend', onDragEnd);
     }
 
+    // Handle menu toggle
     menuToggle.addEventListener('click', function() {
         sidebar.classList.toggle('show');
     });
 
+    // Close sidebar when clicking outside
     document.addEventListener('click', function(event) {
         if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
             sidebar.classList.remove('show');
