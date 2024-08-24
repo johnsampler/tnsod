@@ -227,33 +227,28 @@ header h1 {
 
 /* Ensure content is centered and fits well on mobile devices */
 
+/* Extend header gray bar horizontally on mobile */
+
 @media (max-width: 600px) {
-    /* Reset negative margins or offsets */
-    .index-page .text-center {
-        margin-left: 0; /* Remove any left margin */
-        padding: 0 10px; /* Add padding for spacing */
+    /* Existing styles... */
+
+    header {
+        position: relative; /* Ensure relative positioning for the pseudo-element */
+        overflow: hidden; /* Prevent overflow */
     }
 
-    /* Ensure main content fits within viewport */
-    .main-content {
-        margin-left: 0; /* Remove margin to avoid shifting content */
-        padding: 10px; /* Add padding for spacing */
-        width: 100%; /* Ensure full width */
+    header::before {
+        content: ""; /* No text, just a visual extension */
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw; /* Full viewport width */
+        height: 10px; /* Adjust the height of the extension as needed */
+        background-color: #333; /* Same as the header background color */
+        z-index: -1; /* Place behind the header content */
+        transform: translateX(100%); /* Extend to the right */
     }
 
-    /* Sidebar adjustments */
-    .sidebar {
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        transform: translateX(-100%); /* Hide sidebar by default */
-        transition: transform 0.3s ease;
-    }
-
-    .sidebar.show {
-        transform: translateX(0); /* Show sidebar */
-    }
-
-    /* Carousel adjustments */
     .carousel {
         width: calc(100% - 5px); /* Full width minus 5px offset */
         margin: 0 auto; /* Center carousel */
@@ -281,11 +276,12 @@ header h1 {
         left: 5px; /* Move it further to the left */
     }
 
-    /* Move explore text to the right on mobile */
+    /* Move explore text to the left on mobile */
     .explore-text {
         left: -5px; /* Move text 5px to the left */
     }
 }
+
 
 
 
