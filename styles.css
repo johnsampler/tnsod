@@ -224,13 +224,20 @@ header h1 {
 @media (max-width: 600px) {
     /* Adjust header for mobile */
     header {
-        padding: 10px; /* Adjust padding for consistent appearance */
+        width: 100%; /* Ensure full width */
+        padding: 10px; /* Consistent padding */
         box-sizing: border-box; /* Include padding in width */
+    }
+
+    /* Remove potential overflow issues */
+    body {
+        overflow-x: hidden; /* Prevent horizontal scroll */
     }
 
     /* Adjust carousel position */
     .carousel {
         left: 0; /* Remove any left offset */
+        margin: 0; /* Remove margin to prevent overflow */
     }
 
     /* Adjust Explore Life text position */
