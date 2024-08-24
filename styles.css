@@ -18,7 +18,7 @@ header {
     background-color: #333;
     padding: 10px;
     text-align: center;
-    position: relative; /* Changed to sticky */
+    position: sticky; /* Ensure header stays at top */
     top: 0; /* Stick to the top */
     width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding in width */
@@ -168,8 +168,6 @@ header h1 {
 
 /* Ensure content is centered and fits well on mobile devices */
 
-/* Ensure content fits within screen borders and is centered */
-
 @media (max-width: 600px) {
     /* Reset negative margins or offsets */
     .index-page .text-center {
@@ -229,8 +227,6 @@ header h1 {
 body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
-
-
 
 footer {
     background-color: #333;
