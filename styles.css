@@ -163,43 +163,54 @@ header h1 {
     -webkit-user-drag: none; /* Disable image dragging on webkit browsers */
 }
 
-/* Mobile adjustments */
+/* Additional Mobile Adjustments */
+
 @media (max-width: 600px) {
     header h1 {
         font-size: 1.2em; /* Smaller text size for mobile */
     }
 
     .welcome-text {
-        font-size: 1.5em; /* Smaller text size for mobile */
+        font-size: 1.5em; /* Adjust font size for mobile */
+        margin: 10px 0; /* Reduce margin for better fit */
     }
 
     .explore-text {
-        font-size: 1em; /* Smaller text size for mobile */
+        font-size: 1em; /* Adjust font size for mobile */
+        margin: 10px 0; /* Reduce margin for better fit */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width on mobile */
+        height: 100%; /* Full height on mobile */
+        transform: translateX(-100%); /* Hide offscreen by default */
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.show {
+        transform: translateX(0); /* Show sidebar */
+    }
+
+    .main-content {
+        margin-left: 0; /* Remove left margin */
+        padding: 10px; /* Adjust padding for better fit */
     }
 
     .carousel {
-        width: 100%; /* Full width of the viewport */
-        max-width: 100%; /* Ensure it doesn't exceed viewport width */
-        margin: 0 auto; /* Center the carousel */
-        padding: 0; /* Remove any padding */
-        left: 0; /* Remove horizontal shift */
-    }
-
-    .carousel-inner {
-        display: flex; /* Flexbox for smooth horizontal scroll */
-		max-height: 400px;
-        width: 100%; /* Ensure it takes full width */
-    }
-
-    .carousel-item {
-        flex: 1 0 100%; /* Each item takes full width of the carousel */
+        width: 100%;
+        left: 0;
     }
 
     .carousel-image {
-        width: 100%; /* Full width of the carousel item */
-        height: auto; /* Maintain aspect ratio */
-        object-fit: cover; /* Cover the item container */
-        max-height: 300px; /* Adjust maximum height for better visibility */
+        height: 200px; /* Adjust height for mobile */
+        object-fit: cover; /* Ensure images cover the container */
+    }
+
+    .menu-toggle {
+        display: block; /* Ensure menu toggle is visible */
+        position: absolute;
+        top: 10px;
+        left: 10px;
     }
 }
 
