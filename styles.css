@@ -18,7 +18,7 @@ header {
     background-color: #333;
     padding: 10px;
     text-align: center;
-    position: sticky; /* Ensure header stays at top */
+    position: relative; /* Changed to sticky */
     top: 0; /* Stick to the top */
     width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding in width */
@@ -46,7 +46,7 @@ header h1 {
 
 .container {
     display: flex;
-    flex-direction: row; /* Keep sidebar and main content in a row */
+    flex-direction: column; /* Stack sidebar and main content vertically */
     height: calc(100vh - 40px); /* Full viewport height minus header height */
 }
 
@@ -229,6 +229,8 @@ header h1 {
 body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
+
+
 
 footer {
     background-color: #333;
