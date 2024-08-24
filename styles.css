@@ -280,9 +280,10 @@ header h1 {
     /* Specific adjustment for the explore text on mobile */
     .explore-text {
         position: relative; /* Ensure positioning context */
-        left: 5px; /* Move text 5px to the right */
+        left: 0; /* Move text back to original position */
     }
 }
+
 
 
 /* Ensure footer is always at the bottom */
