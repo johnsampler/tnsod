@@ -229,44 +229,24 @@ header h1 {
 
 /* Extend header gray bar horizontally on mobile */
 
-/* Additional Mobile Adjustments */
-
-/* Ensure content is centered and fits well on mobile devices */
-/* Additional Mobile Adjustments */
-
-/* Ensure content is centered and fits well on mobile devices */
-
 @media (max-width: 600px) {
-    /* Extend header on mobile */
+    /* Existing styles... */
+
     header {
-        position: fixed; /* Fix the header position */
-        top: 0; /* Stick to the top */
-        left: 0; /* Align with the left edge */
-        width: 100vw; /* Extend full viewport width */
-        box-sizing: border-box; /* Include padding in width calculation */
-        margin: 0; /* Ensure no margin affecting layout */
+        position: relative; /* Ensure relative positioning for the pseudo-element */
+        overflow: hidden; /* Prevent overflow */
     }
 
-    .index-page .text-center {
-        margin-left: 0; /* Remove any left margin */
-        padding: 0 10px; /* Add padding for spacing */
-    }
-
-    .main-content {
-        margin-left: 0; /* Remove margin to avoid shifting content */
-        padding: 10px; /* Add padding for spacing */
-        width: 100%; /* Ensure full width */
-    }
-
-    .sidebar {
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        transform: translateX(-100%); /* Hide sidebar by default */
-        transition: transform 0.3s ease;
-    }
-
-    .sidebar.show {
-        transform: translateX(0); /* Show sidebar */
+    header::before {
+        content: ""; /* No text, just a visual extension */
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw; /* Full viewport width */
+        height: 10px; /* Adjust the height of the extension as needed */
+        background-color: #333; /* Same as the header background color */
+        z-index: -1; /* Place behind the header content */
+        transform: translateX(100%); /* Extend to the right */
     }
 
     .carousel {
@@ -290,16 +270,17 @@ header h1 {
         object-fit: cover; /* Cover the container */
     }
 
+    /* Menu toggle adjustments */
     .menu-toggle {
         font-size: 18px; /* Make it smaller on mobile */
         left: 5px; /* Move it further to the left */
     }
 
+    /* Move explore text to the left on mobile */
     .explore-text {
         left: -5px; /* Move text 5px to the left */
     }
 }
-
 
 
 
