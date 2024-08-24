@@ -235,45 +235,30 @@ header h1 {
         box-sizing: border-box; /* Include padding in width */
     }
 
-    /* Center carousel */
+    /* Adjust carousel position */
     .carousel {
         width: 100%; /* Full width */
-        margin: 0 auto; /* Center carousel */
-        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin to prevent overflow */
         left: 0; /* Remove any left offset */
-        box-sizing: border-box; /* Include padding in width */
     }
 
-    .carousel-inner {
-        width: 100%; /* Ensure inner carousel is full width */
-    }
-
-    .carousel-item {
-        width: 100%; /* Full width for each item */
-    }
-
-    .carousel-image {
-        height: auto; /* Maintain aspect ratio */
-        width: 100%; /* Ensure full width */
-        object-fit: cover; /* Cover the container */
-    }
-
-    /* Center text content */
-    .text-center {
-        text-align: center; /* Center align text */
-        margin: 0 auto; /* Center content */
-        padding: 0 10px; /* Add padding for spacing */
-        box-sizing: border-box; /* Include padding in width */
-    }
-
-    .welcome-text {
-        font-size: 2em; /* Adjust as needed */
-        margin: 0; /* Remove default margin */
-    }
-
+    /* Adjust Explore Life text position */
     .explore-text {
-        font-size: 1.2em; /* Adjust as needed */
-        margin: 20px 0 0; /* Adjust top margin */
+        left: 0; /* Remove any left offset */
+    }
+
+    /* Reset negative margins or offsets */
+    .index-page .text-center {
+        margin-left: 0; /* Remove any left margin */
+        padding: 0 10px; /* Add padding for spacing */
+    }
+
+    /* Ensure main content fits within viewport */
+    .main-content {
+        margin-left: 0; /* Remove margin to avoid shifting content */
+        padding: 10px; /* Add padding for spacing */
+        width: 100%; /* Ensure full width */
+        box-sizing: border-box; /* Include padding in width */
     }
 
     /* Sidebar adjustments */
@@ -288,13 +273,27 @@ header h1 {
         transform: translateX(0); /* Show sidebar */
     }
 
+    /* Carousel adjustments */
+    .carousel-inner {
+        width: 100%; /* Ensure inner carousel is full width */
+    }
+
+    .carousel-item {
+        width: 100%; /* Full width for each item */
+    }
+
+    .carousel-image {
+        height: auto; /* Maintain aspect ratio */
+        width: 100%; /* Ensure full width */
+        object-fit: cover; /* Cover the container */
+    }
+
     /* Menu toggle adjustments */
     .menu-toggle {
         font-size: 18px; /* Make it smaller on mobile */
         left: 5px; /* Move it further to the left */
     }
 }
-
 
 /* Ensure footer is always at the bottom */
 footer {
