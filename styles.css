@@ -165,54 +165,68 @@ header h1 {
 
 /* Additional Mobile Adjustments */
 
+/* Ensure content is centered and fits well on mobile devices */
+
 @media (max-width: 600px) {
+    /* Adjust header */
     header h1 {
         font-size: 1.2em; /* Smaller text size for mobile */
     }
 
+    /* Adjust welcome and explore text */
     .welcome-text {
-        font-size: 1.5em; /* Adjust font size for mobile */
-        margin: 10px 0; /* Reduce margin for better fit */
+        font-size: 1.5em;
+        margin: 10px 0;
+        position: static; /* Remove any left offset */
     }
 
     .explore-text {
-        font-size: 1em; /* Adjust font size for mobile */
-        margin: 10px 0; /* Reduce margin for better fit */
+        font-size: 1em;
+        margin: 10px 0;
+        position: static; /* Remove any left offset */
     }
 
+    /* Sidebar adjustments */
     .sidebar {
-        width: 100%; /* Full width on mobile */
-        height: 100%; /* Full height on mobile */
-        transform: translateX(-100%); /* Hide offscreen by default */
-        transition: transform 0.3s ease;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        transform: translateX(-100%); /* Hidden by default */
     }
 
     .sidebar.show {
-        transform: translateX(0); /* Show sidebar */
+        transform: translateX(0); /* Show when toggled */
     }
 
+    /* Main content adjustments */
     .main-content {
-        margin-left: 0; /* Remove left margin */
-        padding: 10px; /* Adjust padding for better fit */
+        margin-left: 0; /* Remove margin for mobile */
+        padding: 10px; /* Adjust padding */
     }
 
+    /* Carousel adjustments */
     .carousel {
-        width: 100%;
-        left: 0;
+        width: 100%; /* Full width */
+        left: 0; /* Remove left offset */
+    }
+
+    .carousel-inner {
+        transform: translateX(0); /* Reset transform */
     }
 
     .carousel-image {
-        height: 200px; /* Adjust height for mobile */
-        object-fit: cover; /* Ensure images cover the container */
+        height: 200px; /* Adjust image height */
+        object-fit: cover; /* Cover container */
     }
 
+    /* Menu toggle adjustments */
     .menu-toggle {
-        display: block; /* Ensure menu toggle is visible */
+        display: block; /* Ensure visibility */
         position: absolute;
         top: 10px;
         left: 10px;
     }
 }
+
 
 footer {
     background-color: #333;
