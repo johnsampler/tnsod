@@ -187,6 +187,7 @@ header h1 {
 
     .carousel-inner {
         display: flex; /* Flexbox for smooth horizontal scroll */
+		max-height: 400px;
         width: 100%; /* Ensure it takes full width */
     }
 
