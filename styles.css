@@ -57,8 +57,6 @@ header h1 {
     opacity: 1;
 }
 
-
-
 .menu-toggle {
     background: none;
     border: none;
@@ -222,6 +220,16 @@ header h1 {
 /* Ensure content is centered and fits well on mobile devices */
 
 @media (max-width: 600px) {
+    /* Adjust carousel position */
+    .carousel {
+        left: -5px; /* Move carousel 5px to the left */
+    }
+
+    /* Adjust Explore Life text position */
+    .explore-text {
+        left: -5px; /* Move Explore Life text 5px to the left */
+    }
+
     /* Reset negative margins or offsets */
     .index-page .text-center {
         margin-left: 0; /* Remove any left margin */
