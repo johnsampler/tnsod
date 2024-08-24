@@ -223,6 +223,10 @@ header h1 {
 
 /* Ensure content is centered and fits well on mobile devices */
 
+/* Additional Mobile Adjustments */
+
+/* Ensure content is centered and fits well on mobile devices */
+
 @media (max-width: 600px) {
     /* Reset negative margins or offsets */
     .index-page .text-center {
@@ -251,14 +255,14 @@ header h1 {
 
     /* Carousel adjustments */
     .carousel {
-        width: 100%; /* Full width */
+        width: calc(100% - 5px); /* Full width minus 5px offset */
         margin: 0 auto; /* Center carousel */
-        left: 0; /* Remove any left offset */
+        left: -5px; /* Move carousel 5px to the left */
     }
 
     .carousel-inner {
         transform: translateX(0); /* Reset transform */
-        width: 100%; /* Full width */
+        width: calc(100% + 5px); /* Adjust width to match carousel width */
     }
 
     .carousel-item {
@@ -279,9 +283,10 @@ header h1 {
 
     /* Move explore text to the right on mobile */
     .explore-text {
-        left: 5px; /* Move text 5px to the right */
+        left: -5px; /* Move text 5px to the left */
     }
 }
+
 
 
 /* Ensure footer is always at the bottom */
