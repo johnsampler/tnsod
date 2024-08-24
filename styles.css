@@ -16,7 +16,7 @@ body {
 
 header {
     background-color: #333;
-    padding: 10px 0; /* Adjust padding for consistent appearance */
+    padding: 10px;
     text-align: center;
     position: sticky; /* Ensure header stays at top */
     top: 0; /* Stick to the top */
@@ -25,7 +25,6 @@ header {
     z-index: 1000; /* Ensure it stays above the sidebar */
 }
 
-/* Adjust header size for mobile */
 header h1 {
     margin: 0;
     color: #e0e0e0;
@@ -58,7 +57,8 @@ header h1 {
     opacity: 1;
 }
 
-/* Sidebar styles */
+
+
 .menu-toggle {
     background: none;
     border: none;
@@ -163,7 +163,7 @@ header h1 {
     font-size: 1.2em;
     margin: 20px 0 0;
     position: relative; /* Ensure positioning context */
-    left: -3px; /* Move Explore Life text 3px to the left */
+    left: -20px; /* Move text 20px to the left */
 }
 
 .carousel {
@@ -220,59 +220,12 @@ header h1 {
 /* Additional Mobile Adjustments */
 
 /* Ensure content is centered and fits well on mobile devices */
-/* Additional Mobile Adjustments */
 
-/* Ensure content is centered and fits well on mobile devices */
 @media (max-width: 600px) {
-    /* Ensure body does not cause horizontal overflow */
-    html, body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* Prevent horizontal scroll */
-    }
-
-    /* Adjust header for mobile */
-    header {
-        width: 100%; /* Ensure full width */
-        padding: 10px; /* Consistent padding */
-        box-sizing: border-box; /* Include padding in width */
-    }
-
-    /* Move carousel to the left */
-    .carousel {
-        width: calc(100% + 20px); /* Increase width to allow shifting */
-        margin-left: -20px; /* Move carousel to the left */
-        position: relative; /* Ensure relative positioning */
-        left: 0; /* Reset any left offset */
-    }
-
-    .carousel-inner {
-        width: 100%; /* Ensure inner carousel is full width */
-    }
-
-    .carousel-item {
-        width: 100%; /* Full width for each item */
-    }
-
-    .carousel-image {
-        height: auto; /* Maintain aspect ratio */
-        width: 100%; /* Ensure full width */
-        object-fit: cover; /* Cover the container */
-    }
-
-    /* Adjust "Explore life under the rule of the great El Duolingo" text */
-    .explore-text {
-        text-align: center; /* Center text */
-        position: relative; /* Relative positioning */
-        left: 0; /* Reset any left offset */
-        margin: 20px 0; /* Adjust margin for spacing */
-    }
-
-    /* Reset negative margins or offsets for main content */
+    /* Reset negative margins or offsets */
     .index-page .text-center {
-        margin: 0; /* Remove any left margin */
+        margin-left: 0; /* Remove any left margin */
         padding: 0 10px; /* Add padding for spacing */
-        text-align: center; /* Center text and content */
     }
 
     /* Ensure main content fits within viewport */
@@ -280,7 +233,6 @@ header h1 {
         margin-left: 0; /* Remove margin to avoid shifting content */
         padding: 10px; /* Add padding for spacing */
         width: 100%; /* Ensure full width */
-        box-sizing: border-box; /* Include padding in width */
     }
 
     /* Sidebar adjustments */
@@ -295,14 +247,34 @@ header h1 {
         transform: translateX(0); /* Show sidebar */
     }
 
+    /* Carousel adjustments */
+    .carousel {
+        width: 100%; /* Full width */
+        margin: 0 auto; /* Center carousel */
+        left: 0; /* Remove any left offset */
+    }
+
+    .carousel-inner {
+        transform: translateX(0); /* Reset transform */
+        width: 100%; /* Full width */
+    }
+
+    .carousel-item {
+        width: 100%; /* Full width for each item */
+    }
+
+    .carousel-image {
+        height: auto; /* Maintain aspect ratio */
+        width: 100%; /* Ensure full width */
+        object-fit: cover; /* Cover the container */
+    }
+
     /* Menu toggle adjustments */
     .menu-toggle {
         font-size: 18px; /* Make it smaller on mobile */
         left: 5px; /* Move it further to the left */
     }
 }
-
-
 
 /* Ensure footer is always at the bottom */
 footer {
