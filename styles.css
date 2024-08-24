@@ -37,11 +37,11 @@ header h1 {
     color: #e0e0e0;
     font-size: 24px;
     cursor: pointer;
-    position: absolute; /* Absolute positioning within the header */
-    top: 50%; /* Center vertically */
-    left: 10px; /* Position to the left of the header */
-    transform: translateY(-50%); /* Center vertically */
-    z-index: 1001; /* Ensure it is above other content */
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Default position */
+    transform: translateY(-50%);
+    z-index: 1001;
 }
 
 .container {
@@ -219,9 +219,8 @@ header h1 {
 
     /* Menu toggle adjustments */
     .menu-toggle {
-        left: 10px; /* Adjust position for mobile */
-        top: 50%; /* Center vertically on mobile */
-        transform: translateY(-50%); /* Ensure vertical centering */
+        font-size: 18px; /* Make it smaller on mobile */
+        left: 5px; /* Move it further to the left */
     }
 }
 
