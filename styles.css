@@ -18,7 +18,7 @@ header {
     background-color: #333;
     padding: 10px;
     text-align: center;
-    position: relative; /* Changed to sticky */
+    position: sticky; /* Ensure header stays at top */
     top: 0; /* Stick to the top */
     width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding in width */
@@ -46,13 +46,13 @@ header h1 {
 
 .container {
     display: flex;
-    flex-direction: column; /* Stack sidebar and main content vertically */
+    flex-direction: row; /* Keep sidebar and main content in a row */
     height: calc(100vh - 40px); /* Full viewport height minus header height */
 }
 
 .sidebar {
     width: 250px;
-    background-color: #333; /* Updated color */
+    background-color: #333;
     padding: 15px;
     position: fixed;
     left: 0;
@@ -63,6 +63,7 @@ header h1 {
     z-index: 1000;
 }
 
+/* Show sidebar when .show class is added */
 .sidebar.show {
     transform: translateX(0);
 }
@@ -228,8 +229,6 @@ header h1 {
 body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
-
-
 
 footer {
     background-color: #333;
