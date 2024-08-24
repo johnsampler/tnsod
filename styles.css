@@ -179,12 +179,15 @@ header h1 {
 
     .carousel {
         width: 100%;
-        left: 0;
+        margin: 0 auto; /* Center the carousel */
+        left: 0; /* Remove the left shift */
+        padding: 0; /* Remove extra padding if any */
     }
 
     .carousel-image {
-        height: 200px; /* Adjust height of carousel images for mobile */
-        object-fit: cover; /* Ensure images cover the container */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure images cover the carousel container */
+        max-height: 200px; /* Set a maximum height for images */
     }
 }
 
