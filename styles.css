@@ -178,16 +178,27 @@ header h1 {
     }
 
     .carousel {
-        width: 100%;
+        width: 100%; /* Full width of the viewport */
+        max-width: 100%; /* Ensure it doesn't exceed viewport width */
         margin: 0 auto; /* Center the carousel */
-        left: 0; /* Remove the left shift */
-        padding: 0; /* Remove extra padding if any */
+        padding: 0; /* Remove any padding */
+        left: 0; /* Remove horizontal shift */
+    }
+
+    .carousel-inner {
+        display: flex; /* Flexbox for smooth horizontal scroll */
+        width: 100%; /* Ensure it takes full width */
+    }
+
+    .carousel-item {
+        flex: 1 0 100%; /* Each item takes full width of the carousel */
     }
 
     .carousel-image {
+        width: 100%; /* Full width of the carousel item */
         height: auto; /* Maintain aspect ratio */
-        object-fit: cover; /* Ensure images cover the carousel container */
-        max-height: 200px; /* Set a maximum height for images */
+        object-fit: cover; /* Cover the item container */
+        max-height: 300px; /* Adjust maximum height for better visibility */
     }
 }
 
