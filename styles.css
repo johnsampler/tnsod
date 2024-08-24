@@ -227,10 +227,6 @@ header h1 {
 
 /* Ensure content is centered and fits well on mobile devices */
 
-/* Additional Mobile Adjustments */
-
-/* Ensure content is centered and fits well on mobile devices */
-
 @media (max-width: 600px) {
     /* Reset negative margins or offsets */
     .index-page .text-center {
@@ -285,18 +281,11 @@ header h1 {
         left: 5px; /* Move it further to the left */
     }
 
-    /* Move explore text to the left on mobile */
+    /* Move explore text to the right on mobile */
     .explore-text {
         left: -5px; /* Move text 5px to the left */
     }
-
-    /* Extend header bar horizontally to the right on mobile */
-    header {
-        width: calc(100% + 5px); /* Extend header width by 5px */
-        margin-left: -5px; /* Shift header to the left by 5px */
-    }
 }
-
 
 
 
