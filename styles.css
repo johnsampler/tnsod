@@ -241,7 +241,7 @@ header h1 {
 
     .welcome-text {
         position: relative; /* Ensure positioning context */
-        left: 3px; /* Move welcome text 3px to the right */
+        left: 0px; /* Move welcome text 3px to the right */
     }
 
     /* Ensure main content fits within viewport */
