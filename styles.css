@@ -221,6 +221,9 @@ header h1 {
 
 /* Ensure content is centered and fits well on mobile devices */
 
+/* Additional Mobile Adjustments */
+
+/* Ensure content is centered and fits well on mobile devices */
 @media (max-width: 600px) {
     /* Reset negative margins or offsets */
     .index-page .text-center {
@@ -228,6 +231,17 @@ header h1 {
         padding: 0 10px; /* Add padding for spacing */
         position: relative; /* Ensure positioning context */
         left: -5px; /* Move text 5px to the left */
+    }
+
+    /* Adjustments for header and welcome text */
+    header h1 {
+        position: relative; /* Ensure positioning context */
+        left: 3px; /* Move header text 3px to the right */
+    }
+
+    .welcome-text {
+        position: relative; /* Ensure positioning context */
+        left: 3px; /* Move welcome text 3px to the right */
     }
 
     /* Ensure main content fits within viewport */
@@ -292,6 +306,7 @@ header h1 {
         left: -5px; /* Move commandments container 5px to the left */
     }
 }
+
 
 
 
