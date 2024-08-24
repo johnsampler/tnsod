@@ -48,6 +48,8 @@ header h1 {
     display: flex;
     flex-direction: column; /* Stack sidebar and main content vertically */
     flex: 1; /* Allow container to expand and take remaining space */
+    min-height: calc(100vh - 40px - 50px); /* Full viewport height minus header and footer height */
+    box-sizing: border-box; /* Include padding in height */
 }
 
 .sidebar {
@@ -223,21 +225,15 @@ header h1 {
     }
 }
 
-/* General rule to prevent overflow */
-body {
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
+/* Ensure footer is always at the bottom */
 footer {
     background-color: #333;
     color: #e0e0e0;
     padding: 10px;
     text-align: center;
-    position: sticky; /* Ensure footer is sticky */
+    position: fixed; /* Fix position to the bottom */
     bottom: 0; /* Stick to the bottom */
     width: 100%; /* Ensure it takes full width */
-    margin-top: auto; /* Push footer to the bottom of the container */
-    /* Ensure footer is always at the bottom */
     box-sizing: border-box; /* Include padding in width */
 }
 
