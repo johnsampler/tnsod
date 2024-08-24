@@ -149,7 +149,7 @@ header h1 {
 
 .carousel-inner {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease; /* Adjust transition duration */
     will-change: transform; /* Improve performance */
 }
 
@@ -177,6 +177,12 @@ header h1 {
         padding: 0 10px; /* Add padding for spacing */
     }
 
+    /* Move the explore text 5px to the right on mobile */
+    .index-page .explore-text {
+        position: relative;
+        left: 5px; /* Move text 5px to the right */
+    }
+
     /* Ensure main content fits within viewport */
     .main-content {
         margin-left: 0; /* Remove margin to avoid shifting content */
@@ -200,7 +206,7 @@ header h1 {
     .carousel {
         width: 100%; /* Full width */
         margin: 0 auto; /* Center carousel */
-        left: -5px; /* Move carousel 10px to the left */
+        left: -5px; /* Move carousel 5px to the right */
     }
 
     .carousel-inner {
