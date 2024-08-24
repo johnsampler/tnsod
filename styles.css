@@ -166,19 +166,28 @@ header h1 {
 
 /* Additional Mobile Adjustments */
 
+/* Ensure content is centered and fits well on mobile devices */
+
 /* Ensure content fits within screen borders and is centered */
+
 @media (max-width: 600px) {
-    body {
-        overflow-x: hidden; /* Prevent horizontal scroll */
+    /* Reset negative margins or offsets */
+    .index-page .text-center {
+        margin-left: 0; /* Remove any left margin */
+        padding: 0 10px; /* Add padding for spacing */
     }
 
-    .container {
-        flex-direction: column; /* Stack sidebar and main content vertically */
+    /* Ensure main content fits within viewport */
+    .main-content {
+        margin-left: 0; /* Remove margin to avoid shifting content */
+        padding: 10px; /* Add padding for spacing */
+        width: 100%; /* Ensure full width */
     }
 
+    /* Sidebar adjustments */
     .sidebar {
         width: 100%; /* Full width */
-        height: auto; /* Auto height */
+        height: 100%; /* Full height */
         transform: translateX(-100%); /* Hide sidebar by default */
         transition: transform 0.3s ease;
     }
@@ -187,12 +196,7 @@ header h1 {
         transform: translateX(0); /* Show sidebar */
     }
 
-    .main-content {
-        margin-left: 0; /* Remove margin */
-        padding: 10px; /* Add padding for spacing */
-        width: 100%; /* Full width */
-    }
-
+    /* Carousel adjustments */
     .carousel {
         width: 100%; /* Full width */
         margin: 0 auto; /* Center carousel */
@@ -200,6 +204,7 @@ header h1 {
     }
 
     .carousel-inner {
+        transform: translateX(0); /* Reset transform */
         width: 100%; /* Full width */
     }
 
@@ -208,24 +213,15 @@ header h1 {
     }
 
     .carousel-image {
+        height: auto; /* Maintain aspect ratio */
         width: 100%; /* Ensure full width */
         object-fit: cover; /* Cover the container */
     }
 
+    /* Menu toggle adjustments */
     .menu-toggle {
-        font-size: 18px; /* Adjust size for mobile */
-        left: 5px; /* Adjust position */
-    }
-
-    footer {
-        position: sticky; /* Make footer sticky */
-        bottom: 0; /* Stick to the bottom */
-        margin-top: auto; /* Ensure it sticks to the bottom of the container */
-        background-color: #333;
-        color: #e0e0e0;
-        padding: 10px;
-        text-align: center;
-        width: 100%; /* Ensure full width */
+        font-size: 18px; /* Make it smaller on mobile */
+        left: 5px; /* Move it further to the left */
     }
 }
 
