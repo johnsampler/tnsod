@@ -219,29 +219,28 @@ header h1 {
 
 /* Ensure content is centered and fits well on mobile devices */
 
-/* Additional Mobile Adjustments */
-
-/* Ensure content is centered and fits well on mobile devices */
-
-/* Additional Mobile Adjustments */
-
-/* Ensure content is centered and fits well on mobile devices */
-
 @media (max-width: 600px) {
-    /* Reset negative margins or offsets */
+    /* Extend header on mobile */
+    header {
+        position: fixed; /* Fix the header position */
+        top: 0; /* Stick to the top */
+        left: 0; /* Align with the left edge */
+        width: 100vw; /* Extend full viewport width */
+        box-sizing: border-box; /* Include padding in width calculation */
+        margin: 0; /* Ensure no margin affecting layout */
+    }
+
     .index-page .text-center {
         margin-left: 0; /* Remove any left margin */
         padding: 0 10px; /* Add padding for spacing */
     }
 
-    /* Ensure main content fits within viewport */
     .main-content {
         margin-left: 0; /* Remove margin to avoid shifting content */
         padding: 10px; /* Add padding for spacing */
         width: 100%; /* Ensure full width */
     }
 
-    /* Sidebar adjustments */
     .sidebar {
         width: 100%; /* Full width */
         height: 100%; /* Full height */
@@ -253,7 +252,6 @@ header h1 {
         transform: translateX(0); /* Show sidebar */
     }
 
-    /* Carousel adjustments */
     .carousel {
         width: calc(100% - 5px); /* Full width minus 5px offset */
         margin: 0 auto; /* Center carousel */
@@ -275,19 +273,15 @@ header h1 {
         object-fit: cover; /* Cover the container */
     }
 
-    /* Menu toggle adjustments */
     .menu-toggle {
         font-size: 18px; /* Make it smaller on mobile */
         left: 5px; /* Move it further to the left */
     }
 
-    /* Move explore text to the right on mobile */
     .explore-text {
         left: -5px; /* Move text 5px to the left */
     }
 }
-
-
 
 /* Ensure footer is always at the bottom */
 footer {
