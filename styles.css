@@ -3,7 +3,6 @@ html, body {
     height: 100%; /* Ensure body takes full height */
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
@@ -12,21 +11,21 @@ body {
     color: #e0e0e0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Ensure header does not overflow viewport */
 header {
     background-color: #333;
-    padding: 10px; /* Adjust padding for consistent appearance */
+    padding: 10px 0; /* Adjust padding for consistent appearance */
     text-align: center;
     position: sticky; /* Ensure header stays at top */
     top: 0; /* Stick to the top */
     width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding in width */
     z-index: 1000; /* Ensure it stays above the sidebar */
-    overflow: hidden; /* Prevent content from overflowing */
 }
 
+/* Adjust header size for mobile */
 header h1 {
     margin: 0;
     color: #e0e0e0;
@@ -124,17 +123,14 @@ header h1 {
     box-sizing: border-box; /* Include padding in width */
 }
 
-/* Ensure no extra space to the right */
 .text-center {
     display: inline-block;
     text-align: center;
     width: 100%;
-    box-sizing: border-box; /* Include padding in width */
 }
 
 .index-page .text-center {
-    margin-left: 0; /* Remove negative margin on mobile */
-    padding: 0 10px; /* Add padding for spacing */
+    margin-left: -100px; /* Shift text -100px to the left on the main page */
 }
 
 /* Text alignment for non-home pages */
@@ -160,14 +156,14 @@ header h1 {
     font-size: 2em;
     margin: 0;
     position: relative; /* Ensure positioning context */
-    left: 0; /* Remove offset */
+    left: -15px; /* Move text 15px to the left */
 }
 
 .explore-text {
     font-size: 1.2em;
     margin: 20px 0 0;
     position: relative; /* Ensure positioning context */
-    left: 0; /* Remove offset */
+    left: -3px; /* Move Explore Life text 3px to the left */
 }
 
 .carousel {
@@ -176,7 +172,7 @@ header h1 {
     overflow: hidden;
     width: calc(100% - 30px); /* Full width minus margins */
     max-width: 600px; /* Adjust as needed */
-    left: 0; /* Remove offset */
+    left: -15px; /* Move carousel 15px to the left */
 }
 
 .carousel-inner {
@@ -230,13 +226,10 @@ header h1 {
     header {
         padding: 10px; /* Adjust padding for consistent appearance */
         box-sizing: border-box; /* Include padding in width */
-        overflow: hidden; /* Prevent content from overflowing */
     }
 
     /* Adjust carousel position */
     .carousel {
-        width: 100%; /* Full width */
-        margin: 0 auto; /* Center carousel */
         left: 0; /* Remove any left offset */
     }
 
