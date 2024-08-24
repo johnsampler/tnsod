@@ -227,7 +227,7 @@ header h1 {
 
     /* Adjust Explore Life text position */
     .explore-text {
-        left: -5px; /* Move Explore Life text 5px to the left */
+        left: -3px; /* Move Explore Life text 5px to the left */
     }
 
     /* Reset negative margins or offsets */
