@@ -177,6 +177,7 @@ header h1 {
     display: flex;
     transition: transform 0.5s ease;
     will-change: transform; /* Improve performance */
+    overflow: hidden; /* Ensure no overflow */
 }
 
 .carousel-item {
@@ -228,6 +229,7 @@ header h1 {
 
     /* Adjust carousel position */
     .carousel {
+        width: calc(100% + 10px); /* Extend carousel width to cover overflow */
         left: -5px; /* Move carousel 5px to the left */
     }
 
