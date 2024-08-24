@@ -57,8 +57,6 @@ header h1 {
     opacity: 1;
 }
 
-
-
 .menu-toggle {
     background: none;
     border: none;
@@ -273,6 +271,11 @@ header h1 {
     .menu-toggle {
         font-size: 18px; /* Make it smaller on mobile */
         left: 5px; /* Move it further to the left */
+    }
+
+    /* Move explore text to the right on mobile */
+    .explore-text {
+        left: 7px; /* Move text 7px to the right */
     }
 }
 
