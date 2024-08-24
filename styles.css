@@ -241,7 +241,7 @@ header h1 {
     /* Move carousel to the left */
     .carousel {
         width: calc(100% + 20px); /* Increase width to allow shifting */
-        margin-left: -10px; /* Move carousel to the left */
+        margin-left: -20px; /* Move carousel to the left */
         position: relative; /* Ensure relative positioning */
         left: 0; /* Reset any left offset */
     }
