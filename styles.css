@@ -219,6 +219,10 @@ header h1 {
 
 /* Ensure content is centered and fits well on mobile devices */
 
+/* Additional Mobile Adjustments */
+
+/* Ensure content is centered and fits well on mobile devices */
+
 @media (max-width: 600px) {
     /* Reset negative margins or offsets */
     .index-page .text-center {
@@ -275,9 +279,10 @@ header h1 {
 
     /* Move explore text to the right on mobile */
     .explore-text {
-        left: 7px; /* Move text 7px to the right */
+        left: 5px; /* Move text 5px to the right */
     }
 }
+
 
 /* Ensure footer is always at the bottom */
 footer {
