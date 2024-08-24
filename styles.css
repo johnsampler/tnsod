@@ -276,6 +276,12 @@ header h1 {
         font-size: 18px; /* Make it smaller on mobile */
         left: 5px; /* Move it further to the left */
     }
+
+    /* Specific adjustment for the explore text on mobile */
+    .explore-text {
+        position: relative; /* Ensure positioning context */
+        left: 10px; /* Move text 10px to the right */
+    }
 }
 
 /* Ensure footer is always at the bottom */
