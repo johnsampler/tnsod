@@ -20,11 +20,12 @@ header {
     text-align: center;
     position: sticky; /* Ensure header stays at top */
     top: 0; /* Stick to the top */
-    width: 100vw; /* Full viewport width */
+    width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding in width */
     z-index: 1000; /* Ensure it stays above the sidebar */
 }
 
+/* Adjust header size for mobile */
 header h1 {
     margin: 0;
     color: #e0e0e0;
@@ -223,19 +224,18 @@ header h1 {
 @media (max-width: 600px) {
     /* Adjust header for mobile */
     header {
-        width: 100vw; /* Full viewport width */
-        padding: 10px 0; /* Adjust padding for consistent appearance */
+        padding: 10px; /* Adjust padding for consistent appearance */
         box-sizing: border-box; /* Include padding in width */
     }
 
     /* Adjust carousel position */
     .carousel {
-        left: -5px; /* Move carousel 5px to the left */
+        left: 0; /* Remove any left offset */
     }
 
     /* Adjust Explore Life text position */
     .explore-text {
-        left: -3px; /* Move Explore Life text 3px to the left */
+        left: 0; /* Remove any left offset */
     }
 
     /* Reset negative margins or offsets */
