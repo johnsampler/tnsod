@@ -235,22 +235,42 @@ header h1 {
         box-sizing: border-box; /* Include padding in width */
     }
 
-    /* Adjust carousel position */
+    /* Center carousel and adjust its container */
     .carousel {
         width: 100%; /* Full width */
-        margin: 0; /* Remove margin to prevent overflow */
-        left: 0; /* Remove any left offset */
+        margin: 0 auto; /* Center horizontally */
+        left: 0; /* Reset any left offset */
+        position: relative; /* Relative positioning */
     }
 
-    /* Adjust Explore Life text position */
+    .carousel-inner {
+        width: 100%; /* Ensure inner carousel is full width */
+        margin: 0 auto; /* Center horizontally */
+    }
+
+    .carousel-item {
+        width: 100%; /* Full width for each item */
+    }
+
+    .carousel-image {
+        height: auto; /* Maintain aspect ratio */
+        width: 100%; /* Ensure full width */
+        object-fit: cover; /* Cover the container */
+    }
+
+    /* Center "Explore life under the rule of the great El Duolingo" text */
     .explore-text {
-        left: 0; /* Remove any left offset */
+        text-align: center; /* Center text */
+        position: relative; /* Relative positioning */
+        left: 0; /* Reset any left offset */
+        margin: 20px 0; /* Adjust margin for spacing */
     }
 
-    /* Reset negative margins or offsets */
+    /* Reset negative margins or offsets for main content */
     .index-page .text-center {
-        margin-left: 0; /* Remove any left margin */
+        margin: 0; /* Remove any left margin */
         padding: 0 10px; /* Add padding for spacing */
+        text-align: center; /* Center text and content */
     }
 
     /* Ensure main content fits within viewport */
@@ -273,27 +293,13 @@ header h1 {
         transform: translateX(0); /* Show sidebar */
     }
 
-    /* Carousel adjustments */
-    .carousel-inner {
-        width: 100%; /* Ensure inner carousel is full width */
-    }
-
-    .carousel-item {
-        width: 100%; /* Full width for each item */
-    }
-
-    .carousel-image {
-        height: auto; /* Maintain aspect ratio */
-        width: 100%; /* Ensure full width */
-        object-fit: cover; /* Cover the container */
-    }
-
     /* Menu toggle adjustments */
     .menu-toggle {
         font-size: 18px; /* Make it smaller on mobile */
         left: 5px; /* Move it further to the left */
     }
 }
+
 
 /* Ensure footer is always at the bottom */
 footer {
