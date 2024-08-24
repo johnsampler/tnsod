@@ -220,9 +220,8 @@ header h1 {
 /* Additional Mobile Adjustments */
 
 /* Ensure content is centered and fits well on mobile devices */
-
 @media (max-width: 600px) {
-    /* Ensure body and header do not cause horizontal overflow */
+    /* Ensure body does not cause horizontal overflow */
     html, body {
         margin: 0;
         padding: 0;
