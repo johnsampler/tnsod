@@ -20,7 +20,7 @@ header {
     text-align: center;
     position: sticky; /* Ensure header stays at top */
     top: 0; /* Stick to the top */
-    width: 100%; /* Full width */
+    width: 100vw; /* Full viewport width */
     box-sizing: border-box; /* Include padding in width */
     z-index: 1000; /* Ensure it stays above the sidebar */
 }
@@ -161,7 +161,7 @@ header h1 {
     font-size: 1.2em;
     margin: 20px 0 0;
     position: relative; /* Ensure positioning context */
-    left: -20px; /* Move text 20px to the left */
+    left: -3px; /* Move Explore Life text 3px to the left */
 }
 
 .carousel {
@@ -220,6 +220,12 @@ header h1 {
 /* Ensure content is centered and fits well on mobile devices */
 
 @media (max-width: 600px) {
+    /* Adjust header for mobile */
+    header {
+        width: 100vw; /* Full viewport width */
+        padding: 10px 0; /* Adjust padding as needed */
+    }
+
     /* Adjust carousel position */
     .carousel {
         left: -5px; /* Move carousel 5px to the left */
