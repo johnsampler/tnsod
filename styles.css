@@ -167,55 +167,54 @@ header h1 {
 
 /* Ensure content is centered and fits well on mobile devices */
 
+/* Ensure content fits within screen borders and is centered */
+
 @media (max-width: 600px) {
-    /* Adjust header */
-    header h1 {
-        font-size: 1.2em; /* Smaller text size for mobile */
+    /* Reset negative margins or offsets */
+    .index-page .text-center {
+        margin-left: 0; /* Remove any left margin */
+        padding: 0 10px; /* Add padding for spacing */
     }
 
-    /* Adjust welcome and explore text */
-    .welcome-text {
-        font-size: 1.5em;
-        margin: 10px 0;
-        position: static; /* Remove any left offset */
-    }
-
-    .explore-text {
-        font-size: 1em;
-        margin: 10px 0;
-        position: static; /* Remove any left offset */
+    /* Ensure main content fits within viewport */
+    .main-content {
+        margin-left: 0; /* Remove margin to avoid shifting content */
+        padding: 10px; /* Add padding for spacing */
+        width: 100%; /* Ensure full width */
     }
 
     /* Sidebar adjustments */
     .sidebar {
         width: 100%; /* Full width */
         height: 100%; /* Full height */
-        transform: translateX(-100%); /* Hidden by default */
+        transform: translateX(-100%); /* Hide sidebar by default */
+        transition: transform 0.3s ease;
     }
 
     .sidebar.show {
-        transform: translateX(0); /* Show when toggled */
-    }
-
-    /* Main content adjustments */
-    .main-content {
-        margin-left: 0; /* Remove margin for mobile */
-        padding: 10px; /* Adjust padding */
+        transform: translateX(0); /* Show sidebar */
     }
 
     /* Carousel adjustments */
     .carousel {
         width: 100%; /* Full width */
-        left: 0; /* Remove left offset */
+        margin: 0 auto; /* Center carousel */
+        left: 0; /* Remove any left offset */
     }
 
     .carousel-inner {
         transform: translateX(0); /* Reset transform */
+        width: 100%; /* Full width */
+    }
+
+    .carousel-item {
+        width: 100%; /* Full width for each item */
     }
 
     .carousel-image {
-        height: 200px; /* Adjust image height */
-        object-fit: cover; /* Cover container */
+        height: auto; /* Maintain aspect ratio */
+        width: 100%; /* Ensure full width */
+        object-fit: cover; /* Cover the container */
     }
 
     /* Menu toggle adjustments */
@@ -223,9 +222,15 @@ header h1 {
         display: block; /* Ensure visibility */
         position: absolute;
         top: 10px;
-        left: 10px;
+        left: 10px; /* Ensure it is visible and accessible */
     }
 }
+
+/* General rule to prevent overflow */
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 
 
 footer {
