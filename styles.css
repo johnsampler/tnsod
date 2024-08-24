@@ -3,6 +3,7 @@ html, body {
     height: 100%; /* Ensure body takes full height */
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
@@ -11,7 +12,7 @@ body {
     color: #e0e0e0;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden; /* Ensure horizontal scroll is hidden */
 }
 
 header {
@@ -56,8 +57,6 @@ header h1 {
 #commandment-text.show {
     opacity: 1;
 }
-
-
 
 .menu-toggle {
     background: none;
@@ -173,6 +172,7 @@ header h1 {
     width: calc(100% - 30px); /* Full width minus margins */
     max-width: 600px; /* Adjust as needed */
     left: -15px; /* Move carousel 15px to the left */
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .carousel-inner {
@@ -220,7 +220,6 @@ header h1 {
 /* Additional Mobile Adjustments */
 
 /* Ensure content is centered and fits well on mobile devices */
-
 @media (max-width: 600px) {
     /* Reset negative margins or offsets */
     .index-page .text-center {
@@ -233,6 +232,7 @@ header h1 {
         margin-left: 0; /* Remove margin to avoid shifting content */
         padding: 10px; /* Add padding for spacing */
         width: 100%; /* Ensure full width */
+        box-sizing: border-box; /* Include padding in width */
     }
 
     /* Sidebar adjustments */
@@ -252,6 +252,7 @@ header h1 {
         width: 100%; /* Full width */
         margin: 0 auto; /* Center carousel */
         left: 0; /* Remove any left offset */
+        box-sizing: border-box; /* Include padding in width */
     }
 
     .carousel-inner {
@@ -261,6 +262,7 @@ header h1 {
 
     .carousel-item {
         width: 100%; /* Full width for each item */
+        box-sizing: border-box; /* Include padding in width */
     }
 
     .carousel-image {
