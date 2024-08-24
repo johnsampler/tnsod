@@ -20,9 +20,10 @@ header {
     text-align: center;
     position: sticky; /* Ensure header stays at top */
     top: 0; /* Stick to the top */
-    width: 100vw; /* Full viewport width */
+    width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding in width */
     z-index: 1000; /* Ensure it stays above the sidebar */
+    overflow: hidden; /* Hide any overflowing content */
 }
 
 header h1 {
@@ -223,9 +224,10 @@ header h1 {
 @media (max-width: 600px) {
     /* Adjust header for mobile */
     header {
-        width: 100vw; /* Full viewport width */
+        width: 100vw; /* Ensure full viewport width */
         padding: 10px 0; /* Adjust padding for consistent appearance */
         box-sizing: border-box; /* Include padding in width */
+        overflow: hidden; /* Hide any overflowing content */
     }
 
     /* Adjust carousel position */
