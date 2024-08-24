@@ -241,7 +241,7 @@ header h1 {
 
     .welcome-text {
         position: relative; /* Ensure positioning context */
-        left: 0px; /* Move welcome text 3px to the right */
+        left: 0; /* Move welcome text back to original position */
     }
 
     /* Ensure main content fits within viewport */
@@ -254,10 +254,11 @@ header h1 {
 
     /* Sidebar adjustments */
     .sidebar {
-        width: 100%; /* Full width */
+        width: 80%; /* Set a smaller width for mobile */
         height: 100%; /* Full height */
         transform: translateX(-100%); /* Hide sidebar by default */
         transition: transform 0.3s ease;
+        background-color: #333; /* Ensure background color matches */
     }
 
     .sidebar.show {
@@ -306,6 +307,7 @@ header h1 {
         left: -5px; /* Move commandments container 5px to the left */
     }
 }
+
 
 
 
