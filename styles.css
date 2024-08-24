@@ -38,8 +38,9 @@ header h1 {
     font-size: 24px;
     cursor: pointer;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 50%; /* Center vertically */
+    left: 20px; /* Move it a bit to the right from the edge */
+    transform: translateY(-50%); /* Adjust vertical centering */
     z-index: 1001;
 }
 
@@ -143,7 +144,7 @@ header h1 {
     left: -15px; /* Move carousel 15px to the left */
 }
 
-.carousel-wrapper {
+.carousel-inner {
     display: flex;
     transition: transform 0.5s ease;
     will-change: transform; /* Improve performance */

@@ -1,81 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
-    const carouselWrapper = document.querySelector('.carousel-wrapper');
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const totalItems = carouselItems.length;
-    let currentIndex = 1; // Start at 1 to show the first real image
-    const autoScrollInterval = 3000; // Time in milliseconds
+    const carouselInner = document.querySelector('.carousel-inner');
+    const images = document.querySelectorAll('.carousel-inner img');
+    const totalImages = images.length;
+    let currentIndex = 0;
 
-    let startX, endX;
-    let isDragging = false;
-    let startTranslateX;
+    // Clone all images to create a seamless infinite loop
+    carouselInner.innerHTML += carouselInner.innerHTML;
 
-    // Duplicate first and last items to create seamless scrolling
-    function cloneItems() {
-        const firstClone = carouselItems[0].cloneNode(true);
-        const lastClone = carouselItems[carouselItems.length - 1].cloneNode(true);
-        carouselWrapper.appendChild(firstClone);
-        carouselWrapper.insertBefore(lastClone, carouselItems[0]);
-    }
-
-    function updateCarousel() {
-        carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    function nextSlide() {
+    // Function to move the carousel to the next image
+    function moveCarousel() {
         currentIndex++;
-        if (currentIndex >= totalItems + 1) {
-            // Disable transition for instant jump
-            carouselWrapper.style.transition = 'none'; 
-            currentIndex = 1; // Jump to the first real item
-            carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        carouselInner.style.transition = 'transform 1s ease';
+        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-            // Force reflow to reset transition
-            carouselWrapper.offsetHeight;
-
-            // Re-enable transition and smoothly move to the first item
+        // Reset to the first set of images seamlessly
+        if (currentIndex === totalImages) {
             setTimeout(() => {
-                carouselWrapper.style.transition = 'transform 0.5s ease';
-                updateCarousel();
-            }, 50); // Small timeout to ensure transition reset
-        } else {
-            updateCarousel();
+                carouselInner.style.transition = 'none'; // Disable transition for reset
+                carouselInner.style.transform = 'translateX(0)';
+                currentIndex = 0;
+            }, 1000); // Match this delay with the transition duration
         }
     }
 
-    function prevSlide() {
-        currentIndex--;
-        if (currentIndex < 0) {
-            // Disable transition for instant jump
-            carouselWrapper.style.transition = 'none';
-            currentIndex = totalItems - 1; // Jump to the last real item
-            carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    // Set interval to change images automatically every 3 seconds
+    setInterval(moveCarousel, 3000);
 
-            // Force reflow to reset transition
-            carouselWrapper.offsetHeight;
-
-            // Re-enable transition and smoothly move to the last item
-            setTimeout(() => {
-                carouselWrapper.style.transition = 'transform 0.5s ease';
-                updateCarousel();
-            }, 50); // Small timeout to ensure transition reset
-        } else {
-            updateCarousel();
-        }
-    }
-
-    function startAutoScroll() {
-        return setInterval(nextSlide, autoScrollInterval);
-    }
-
-    function resetAutoScroll() {
-        clearInterval(autoScroll);
-        autoScroll = startAutoScroll();
-    }
-
-    let autoScroll = startAutoScroll(); // Start auto-scrolling when the page loads
-
+    // Handle menu toggle
     menuToggle.addEventListener('click', function() {
         sidebar.classList.toggle('show');
         menuToggle.style.display = sidebar.classList.contains('show') ? 'none' : 'block';
@@ -88,50 +41,78 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Handle mouse and touch events for carousel
+    // Drag and swipe functionality
+    let startX, endX;
+    let isDragging = false;
+    let startTranslateX;
+
     function onTouchStart(event) {
         isDragging = true;
         startX = event.touches ? event.touches[0].clientX : event.clientX;
-        startTranslateX = -currentIndex * carouselWrapper.offsetWidth;
-        carouselWrapper.style.transition = 'none'; // Disable transition during drag
+        startTranslateX = -currentIndex * carouselInner.offsetWidth;
+        carouselInner.style.transition = 'none'; // Disable transition during drag
     }
 
     function onTouchMove(event) {
         if (!isDragging) return;
         endX = event.touches ? event.touches[0].clientX : event.clientX;
         const moveX = endX - startX;
-        carouselWrapper.style.transform = `translateX(${startTranslateX + moveX}px)`;
+        carouselInner.style.transform = `translateX(${startTranslateX + moveX}px)`;
     }
 
     function onTouchEnd(event) {
         if (!isDragging) return;
         isDragging = false;
         const moveX = endX - startX;
-        const threshold = carouselWrapper.offsetWidth / 3; // Adjust swipe sensitivity here
+        const threshold = carouselInner.offsetWidth / 3; // Adjust swipe sensitivity here
         if (Math.abs(moveX) > threshold) {
             if (moveX < 0) {
-                nextSlide(); // Swipe left to go to the next slide
+                currentIndex = (currentIndex + 1) % totalImages; // Move to the next image
             } else {
-                prevSlide(); // Swipe right to go to the previous slide
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages; // Move to the previous image
             }
-        } else {
-            // If the swipe distance is less than the threshold, revert to the current slide
-            updateCarousel();
         }
-        carouselWrapper.style.transition = 'transform 0.5s ease'; // Re-enable transition
-        resetAutoScroll(); // Reset auto-scroll on manual navigation
+        carouselInner.style.transition = 'transform 1s ease'; // Re-enable transition
+        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    carouselWrapper.addEventListener('mousedown', onTouchStart);
-    carouselWrapper.addEventListener('mousemove', onTouchMove);
-    carouselWrapper.addEventListener('mouseup', onTouchEnd);
-    carouselWrapper.addEventListener('mouseleave', onTouchEnd); // Handle mouse leaving the carousel
+    function onMouseDown(event) {
+        isDragging = true;
+        startX = event.clientX;
+        startTranslateX = -currentIndex * carouselInner.offsetWidth;
+        carouselInner.style.transition = 'none'; // Disable transition during drag
+    }
 
-    carouselWrapper.addEventListener('touchstart', onTouchStart);
-    carouselWrapper.addEventListener('touchmove', onTouchMove);
-    carouselWrapper.addEventListener('touchend', onTouchEnd);
+    function onMouseMove(event) {
+        if (!isDragging) return;
+        endX = event.clientX;
+        const moveX = endX - startX;
+        carouselInner.style.transform = `translateX(${startTranslateX + moveX}px)`;
+    }
 
-    // Initialize carousel with cloned items
-    cloneItems();
-    updateCarousel();
+    function onMouseUp(event) {
+        if (!isDragging) return;
+        isDragging = false;
+        const moveX = endX - startX;
+        const threshold = carouselInner.offsetWidth / 3; // Adjust drag sensitivity here
+        if (Math.abs(moveX) > threshold) {
+            if (moveX < 0) {
+                currentIndex = (currentIndex + 1) % totalImages; // Move to the next image
+            } else {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages; // Move to the previous image
+            }
+        }
+        carouselInner.style.transition = 'transform 1s ease'; // Re-enable transition
+        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Attach event listeners for dragging and swiping
+    carouselInner.addEventListener('mousedown', onMouseDown);
+    carouselInner.addEventListener('mousemove', onMouseMove);
+    carouselInner.addEventListener('mouseup', onMouseUp);
+    carouselInner.addEventListener('mouseleave', onMouseUp); // Handle mouse leaving the carousel
+
+    carouselInner.addEventListener('touchstart', onTouchStart);
+    carouselInner.addEventListener('touchmove', onTouchMove);
+    carouselInner.addEventListener('touchend', onTouchEnd);
 });
