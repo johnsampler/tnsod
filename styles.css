@@ -47,7 +47,7 @@ header h1 {
 .container {
     display: flex;
     flex-direction: column; /* Stack sidebar and main content vertically */
-    height: calc(100vh - 40px); /* Full viewport height minus header height */
+    flex: 1; /* Allow container to expand and take remaining space */
 }
 
 .sidebar {
@@ -233,10 +233,12 @@ footer {
     color: #e0e0e0;
     padding: 10px;
     text-align: center;
-    position: sticky;
+    position: sticky; /* Ensure footer is sticky */
     bottom: 0; /* Stick to the bottom */
     width: 100%; /* Ensure it takes full width */
     margin-top: auto; /* Push footer to the bottom of the container */
+    /* Ensure footer is always at the bottom */
+    box-sizing: border-box; /* Include padding in width */
 }
 
 footer a {
