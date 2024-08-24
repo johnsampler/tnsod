@@ -180,7 +180,7 @@ header h1 {
     /* Move the explore text 5px to the right on mobile */
     .index-page .explore-text {
         position: relative;
-        left: 2px; /* Move text 2px to the right */
+        left: 0px; /* Move text 0px to the right */
     }
 
     /* Ensure main content fits within viewport */
