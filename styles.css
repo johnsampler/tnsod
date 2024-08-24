@@ -241,6 +241,8 @@ header h1 {
         margin: 0 auto; /* Center horizontally */
         left: 0; /* Reset any left offset */
         position: relative; /* Relative positioning */
+		margin-left: -10px; /* Adjust the value to move left as needed */
+        width: calc(100% + 10px); /* Compensate for the negative margin */
     }
 
     .carousel-inner {
