@@ -254,7 +254,7 @@ header h1 {
 
     /* Sidebar adjustments */
     .sidebar {
-        width: 30%; /* Set a smaller width for mobile */
+        width: 35%; /* Set a smaller width for mobile */
         height: 100%; /* Full height */
         transform: translateX(-100%); /* Hide sidebar by default */
         transition: transform 0.3s ease;
