@@ -23,6 +23,7 @@ header {
     width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding in width */
     z-index: 1000; /* Ensure it stays above the sidebar */
+    overflow: hidden; /* Prevent overflow */
 }
 
 header h1 {
@@ -161,7 +162,7 @@ header h1 {
     font-size: 1.2em;
     margin: 20px 0 0;
     position: relative; /* Ensure positioning context */
-    left: -20px; /* Move text 20px to the left */
+    left: -3px; /* Move Explore Life text 3px to the left */
 }
 
 .carousel {
@@ -220,6 +221,12 @@ header h1 {
 /* Ensure content is centered and fits well on mobile devices */
 
 @media (max-width: 600px) {
+    /* Adjust header for mobile */
+    header {
+        padding: 10px 5px; /* Adjust padding */
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
     /* Adjust carousel position */
     .carousel {
         left: -5px; /* Move carousel 5px to the left */
@@ -227,7 +234,7 @@ header h1 {
 
     /* Adjust Explore Life text position */
     .explore-text {
-        left: -3px; /* Move Explore Life text 5px to the left */
+        left: -3px; /* Move Explore Life text 3px to the left */
     }
 
     /* Reset negative margins or offsets */
