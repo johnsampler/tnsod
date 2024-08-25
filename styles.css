@@ -307,10 +307,13 @@ header h1 {
     }
 	
 	footer {
-		position: absolute;
-		right: 0;
 		bottom: 0;
+		color: #e0e0e0;
+		height: 2em;
 		left: 0;
+		position: relative; //changed to relative from fixed also works if position is not there
+		font-size: small;
+		width:100%;
     }
 
     /* Adjust container to avoid overlapping with the footer */
