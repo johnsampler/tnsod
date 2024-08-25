@@ -118,7 +118,7 @@ header h1 {
     flex: 1;
     padding: 20px;
     margin-left: 250px; /* Adjust according to sidebar width */
-	margin-bottom: 60px;
+	margin-bottom: 10px;
     box-sizing: border-box; /* Include padding in width */
 }
 
@@ -250,7 +250,7 @@ header h1 {
         padding: 10px; /* Add padding for spacing */
         width: 100%; /* Ensure full width */
         box-sizing: border-box; /* Include padding in width */
-		margin-bottom: 80px;
+		margin-bottom: 10px;
     }
 
     /* Sidebar adjustments */
