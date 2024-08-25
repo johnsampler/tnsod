@@ -306,14 +306,24 @@ header h1 {
         left: -5px; /* Move commandments container 5px to the left */
     }
 	
-	footer {
-        position: relative; /* Change to relative to allow normal flow */
-        margin-top: 10px; /* Add margin-top to push footer down if needed */
+    /* Ensure the footer is at the bottom of the viewport without overlapping content */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Full viewport height */
+        margin: 0;
     }
 
-    /* Adjust container to avoid overlapping with the footer */
     .container {
-        margin-bottom: 60px; /* Ensure space for footer */
+        flex: 1; /* Allow container to take up remaining space */
+        padding-bottom: 60px; /* Ensure space for the footer */
+    }
+
+    footer {
+        position: relative; /* Normal flow positioning */
+        width: 100%; /* Full width */
+        box-sizing: border-box; /* Include padding in width */
+        margin: 0; /* Remove any margin */
     }
 }
 
