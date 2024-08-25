@@ -331,9 +331,9 @@ header h1 {
         text-align: center;
         padding: 10px;
         box-sizing: border-box; /* Include padding in width */
-        position: static; /* Normal flow positioning */
-		position: static;
-        margin-top: auto;
+ 
+		position: absolute;
+		bottom: 0;
     }
 }
 
