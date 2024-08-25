@@ -319,11 +319,12 @@ footer {
     color: #e0e0e0;
     padding: 10px;
     text-align: center;
-    position: fixed; /* Fix position to the bottom */
-    bottom: 0; /* Stick to the bottom */
     width: 100%; /* Ensure it takes full width */
     box-sizing: border-box; /* Include padding in width */
+    margin-top: auto; /* Push it to the bottom if using flex layout */
+    position: relative; /* Change from fixed to relative */
 }
+
 
 footer a {
     color: #e0e0e0;
