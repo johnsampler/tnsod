@@ -306,7 +306,9 @@ header h1 {
         left: -5px; /* Move commandments container 5px to the left */
     }
 	
-	
+	footer {
+		padding-bottom: 30px;
+	}
 }
 
 
