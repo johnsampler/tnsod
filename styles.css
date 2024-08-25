@@ -332,7 +332,8 @@ header h1 {
         padding: 10px;
         box-sizing: border-box; /* Include padding in width */
         position: static; /* Normal flow positioning */
-        margin: 0; /* No extra margin */
+		position: static;
+        margin-top: auto;
     }
 }
 
