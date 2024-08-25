@@ -305,6 +305,16 @@ header h1 {
         position: relative; /* Ensure positioning context */
         left: -5px; /* Move commandments container 5px to the left */
     }
+	
+	footer {
+        position: relative; /* Change to relative to allow normal flow */
+        margin-top: 10px; /* Add margin-top to push footer down if needed */
+    }
+
+    /* Adjust container to avoid overlapping with the footer */
+    .container {
+        margin-bottom: 60px; /* Ensure space for footer */
+    }
 }
 
 
