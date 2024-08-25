@@ -12,6 +12,7 @@ body {
     color: #e0e0e0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full viewport height */
     overflow-x: hidden; /* Ensure horizontal scroll is hidden */
 }
 
@@ -32,32 +33,6 @@ header h1 {
     font-size: 1.5em; /* Adjust size for mobile */
 }
 
-/* Additional styles for commandments */
-#commandment-container {
-    position: fixed; /* Position it at the bottom of the viewport */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333; /* Match the sidebar color or choose a suitable color */
-    padding: 10px;
-    text-align: center;
-    box-sizing: border-box; /* Include padding in width */
-}
-
-/* Styles for commandment text with fading effect */
-#commandment-text {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out; /* Reduced duration for quicker fade */
-    font-size: 1.5em;
-    text-align: center;
-    margin: 20px;
-}
-
-/* Class to show commandment text with fade in effect */
-#commandment-text.show {
-    opacity: 1;
-}
-
 .menu-toggle {
     background: none;
     border: none;
@@ -75,7 +50,7 @@ header h1 {
     display: flex;
     flex-direction: column; /* Stack sidebar and main content vertically */
     flex: 1; /* Allow container to expand and take remaining space */
-    min-height: calc(100vh - 40px - 50px); /* Full viewport height minus header and footer height */
+    min-height: calc(100vh - 40px); /* Full viewport height minus header height */
     box-sizing: border-box; /* Include padding in height */
 }
 
@@ -85,11 +60,15 @@ header h1 {
     padding: 15px;
     position: fixed;
     left: 0;
-    top: 0;
+    top: 40px; /* Start below header */
+    bottom: 0; /* Extend to the bottom of the viewport */
     height: calc(100vh - 40px); /* Full height minus header height */
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Align content vertically */
+    justify-content: space-between; /* Space between navigation and contact */
 }
 
 /* Show sidebar when .show class is added */
@@ -100,6 +79,7 @@ header h1 {
 .sidebar nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0; /* Remove default margin */
 }
 
 .sidebar nav ul li {
@@ -115,6 +95,14 @@ header h1 {
     text-decoration: underline;
 }
 
+.sidebar-contact {
+    padding-top: 10px; /* Add some spacing above contact info */
+    border-top: 1px solid #555; /* Optional: add a top border for separation */
+    text-align: center;
+    color: #e0e0e0;
+}
+
+/* Main content adjustments */
 .main-content {
     flex: 1;
     padding: 20px;
@@ -217,7 +205,6 @@ header h1 {
     opacity: 1;
 }
 
-
 /* Additional Mobile Adjustments */
 
 /* Ensure content is centered and fits well on mobile devices */
@@ -270,67 +257,14 @@ header h1 {
     .carousel {
         width: 100%; /* Full width */
         margin: 0 auto; /* Center carousel */
-        left: -5px; /* Move carousel 5px to the left */
+        left: 0; /* Ensure carousel starts from left */
         box-sizing: border-box; /* Include padding in width */
     }
 
-    .carousel-inner {
-        transform: translateX(0); /* Reset transform */
-        width: 100%; /* Full width */
+    /* Commandments styles for mobile */
+    .commandments {
+        font-size: 1em; /* Smaller font size */
+        padding: 5px; /* Less padding */
+        bottom: 0; /* Stick to bottom */
     }
-
-    .carousel-item {
-        width: 100%; /* Full width for each item */
-        box-sizing: border-box; /* Include padding in width */
-    }
-
-    .carousel-image {
-        height: auto; /* Maintain aspect ratio */
-        width: 100%; /* Ensure full width */
-        object-fit: cover; /* Cover the container */
-    }
-
-    /* Menu toggle adjustments */
-    .menu-toggle {
-        font-size: 18px; /* Make it smaller on mobile */
-        left: 5px; /* Move it further to the left */
-    }
-
-    /* Specific adjustment for the explore text on mobile */
-    .explore-text {
-        position: relative; /* Ensure positioning context */
-        left: -5px; /* Move text 5px to the left */
-    }
-
-    /* Adjustments for commandments on mobile */
-    #commandment-container {
-        position: relative; /* Ensure positioning context */
-        left: -5px; /* Move commandments container 5px to the left */
-    }
-}
-
-
-
-
-
-
-/* Ensure footer is always at the bottom */
-footer {
-    background-color: #333;
-    color: #e0e0e0;
-    padding: 10px;
-    text-align: center;
-    position: fixed; /* Fix position to the bottom */
-    bottom: 0; /* Stick to the bottom */
-    width: 100%; /* Ensure it takes full width */
-    box-sizing: border-box; /* Include padding in width */
-}
-
-footer a {
-    color: #e0e0e0;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
