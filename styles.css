@@ -118,6 +118,7 @@ header h1 {
     flex: 1;
     padding: 20px;
     margin-left: 250px; /* Adjust according to sidebar width */
+	margin-bottom: 60px;
     box-sizing: border-box; /* Include padding in width */
 }
 
@@ -249,6 +250,7 @@ header h1 {
         padding: 10px; /* Add padding for spacing */
         width: 100%; /* Ensure full width */
         box-sizing: border-box; /* Include padding in width */
+        margin-bottom: 60px; /* Add margin at the bottom to prevent overlap with footer */
     }
 
     /* Sidebar adjustments */
@@ -320,9 +322,10 @@ footer {
     text-align: center;
     width: 100%; /* Ensure it takes full width */
     box-sizing: border-box; /* Include padding in width */
-    margin-top: auto; /* Push footer to the bottom of the page */
-	position: fixed;
-	bottom: 0;
+    position: fixed; /* Fix the footer at the bottom */
+    bottom: 0; /* Align it to the bottom */
+    left: 0; /* Ensure it stretches across the entire width */
+    z-index: 1000; /* Ensure it stays on top of other content */
 }
 
 footer a {
