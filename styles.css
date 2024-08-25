@@ -306,20 +306,7 @@ header h1 {
         left: -5px; /* Move commandments container 5px to the left */
     }
 	
-	footer {
-		bottom: 0;
-		color: #e0e0e0;
-		height: 2em;
-		left: 0;
-		position: relative; //changed to relative from fixed also works if position is not there
-		font-size: small;
-		width:100%;
-    }
-
-    /* Adjust container to avoid overlapping with the footer */
-    .container {
-        margin-bottom: 60px; /* Ensure space for footer */
-    }
+	
 }
 
 
