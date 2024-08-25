@@ -307,19 +307,19 @@ header h1 {
     }
 	
     html, body {
-        height: 100%; /* Full viewport height */
-        margin: 0;
-        padding: 0;
+        height: 100%; /* Full height to enable flex layout */
+        margin: 0; /* Remove default margin */
     }
 
     body {
         display: flex;
         flex-direction: column;
+        margin: 0; /* Remove any default margin */
         min-height: 100vh; /* Full viewport height */
     }
 
     .container {
-        flex: 1; /* Take up remaining space */
+        flex: 1; /* Take up available space */
         padding-bottom: 60px; /* Space for the footer */
         box-sizing: border-box; /* Include padding in height calculation */
     }
@@ -331,8 +331,8 @@ header h1 {
         text-align: center;
         padding: 10px;
         box-sizing: border-box; /* Include padding in width */
-        position: static; /* Ensure it's in normal flow */
-        margin: 0; /* Remove margin to prevent extra space */
+        position: static; /* Normal flow positioning */
+        margin: 0; /* No extra margin */
     }
 }
 
