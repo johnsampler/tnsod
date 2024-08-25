@@ -325,6 +325,8 @@ footer {
     width: 100%; /* Ensure it takes full width */
     box-sizing: border-box; /* Include padding in width */
     margin-top: auto; /* Push footer to the bottom of the page */
+	position: absolute;
+	bottom: 0;
 }
 
 footer a {
