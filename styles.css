@@ -96,11 +96,16 @@ header h1 {
 }
 
 .sidebar-contact {
-    padding-top: 10px; /* Add some spacing above contact info */
+    position: absolute;
+    bottom: 30px; /* Moves it 30px higher from the bottom */
+    left: 15px; /* Adjust if needed for alignment */
+    right: 15px; /* Adjust if needed for alignment */
     border-top: 1px solid #555; /* Optional: add a top border for separation */
     text-align: center;
     color: #e0e0e0;
 }
+
+
 
 /* Main content adjustments */
 .main-content {
