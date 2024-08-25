@@ -12,6 +12,7 @@ body {
     color: #e0e0e0;
     display: flex;
     flex-direction: column;
+	min-height: 100vh;
     overflow-x: hidden; /* Ensure horizontal scroll is hidden */
 }
 
@@ -72,10 +73,10 @@ header h1 {
 }
 
 .container {
+	flex: 1;
     display: flex;
     flex-direction: column; /* Stack sidebar and main content vertically */
     min-height: 100vh; /* Full viewport height */
-    margin-bottom: 50px; /* Space for the footer height */
 }
 
 .sidebar {
@@ -325,8 +326,7 @@ footer {
     text-align: center;
     width: 100%; /* Ensure it takes full width */
     box-sizing: border-box; /* Include padding in width */
-    position: relative; /* Change to relative positioning */
-    margin-top: 20px; /* Add some margin to separate from content */
+    margin-top: auto; /* Add some margin to separate from content */
 }
 
 footer a {
