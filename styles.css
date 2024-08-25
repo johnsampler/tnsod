@@ -306,29 +306,33 @@ header h1 {
         left: -5px; /* Move commandments container 5px to the left */
     }
 	
-    /* Ensure the footer is at the bottom of the viewport without overlapping content */
+    html, body {
+        height: 100%; /* Full viewport height */
+        margin: 0;
+        padding: 0;
+    }
+
     body {
         display: flex;
         flex-direction: column;
         min-height: 100vh; /* Full viewport height */
-        margin: 0;
     }
 
     .container {
-        flex: 1; /* Allow container to expand and take up available space */
-        padding-bottom: 60px; /* Provide space for the footer */
-        box-sizing: border-box; /* Include padding in height */
+        flex: 1; /* Take up remaining space */
+        padding-bottom: 60px; /* Space for the footer */
+        box-sizing: border-box; /* Include padding in height calculation */
     }
 
     footer {
-        position: relative; /* Ensure footer flows normally */
         width: 100%; /* Full width */
-        box-sizing: border-box; /* Include padding in width */
-        margin: 0; /* No margin needed */
-        padding: 10px; /* Padding as needed */
         background-color: #333;
         color: #e0e0e0;
         text-align: center;
+        padding: 10px;
+        box-sizing: border-box; /* Include padding in width */
+        position: static; /* Ensure it's in normal flow */
+        margin: 0; /* Remove margin to prevent extra space */
     }
 }
 
