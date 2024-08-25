@@ -307,8 +307,10 @@ header h1 {
     }
 	
 	footer {
-        position: absolute; /* Change to relative to allow normal flow */
-        bottom: 0; /* Add margin-top to push footer down if needed */
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
     }
 
     /* Adjust container to avoid overlapping with the footer */
