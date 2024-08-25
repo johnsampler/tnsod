@@ -306,34 +306,14 @@ header h1 {
         left: -5px; /* Move commandments container 5px to the left */
     }
 	
-    html, body {
-        height: 100%; /* Full height to enable flex layout */
-        margin: 0; /* Remove default margin */
+	footer {
+        position: absolute; /* Change to relative to allow normal flow */
+        bottom: 0; /* Add margin-top to push footer down if needed */
     }
 
-    body {
-        display: flex;
-        flex-direction: column;
-        margin: 0; /* Remove any default margin */
-        min-height: 100vh; /* Full viewport height */
-    }
-
+    /* Adjust container to avoid overlapping with the footer */
     .container {
-        flex: 1; /* Take up available space */
-        padding-bottom: 60px; /* Space for the footer */
-        box-sizing: border-box; /* Include padding in height calculation */
-    }
-
-    footer {
-        width: 100%; /* Full width */
-        background-color: #333;
-        color: #e0e0e0;
-        text-align: center;
-        padding: 10px;
-        box-sizing: border-box; /* Include padding in width */
- 
-		position: absolute;
-		bottom: 0;
+        margin-bottom: 60px; /* Ensure space for footer */
     }
 }
 
