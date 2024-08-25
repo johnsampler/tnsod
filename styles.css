@@ -217,6 +217,27 @@ header h1 {
     opacity: 1;
 }
 
+/* Additional styles for centering the form */
+.contact-page .form-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    position: relative;
+    left: -110px; /* Shift 100px to the left */
+    padding: 20px; /* Optional padding */
+}
+
+/* Center the iframe inside the container */
+.contact-page iframe {
+    border: none; /* Remove border if necessary */
+}
+
+/* Adjust the h2 element */
+.contact-page h2 {
+    position: relative;
+    left: 520px; /* Move 125px to the right */
+}
+
+
 /* Additional Mobile Adjustments */
 
 /* Ensure content is centered and fits well on mobile devices */
