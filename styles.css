@@ -305,10 +305,6 @@ header h1 {
         position: relative; /* Ensure positioning context */
         left: -5px; /* Move commandments container 5px to the left */
     }
-	
-	footer {
-		padding-bottom: 30px;
-	}
 }
 
 
