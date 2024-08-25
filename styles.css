@@ -74,9 +74,8 @@ header h1 {
 .container {
     display: flex;
     flex-direction: column; /* Stack sidebar and main content vertically */
-    flex: 1; /* Allow container to expand and take remaining space */
-    min-height: calc(100vh - 40px - 50px); /* Full viewport height minus header and footer height */
-    box-sizing: border-box; /* Include padding in height */
+    min-height: 100vh; /* Full viewport height */
+    margin-bottom: 50px; /* Space for the footer height */
 }
 
 .sidebar {
@@ -321,10 +320,8 @@ footer {
     text-align: center;
     width: 100%; /* Ensure it takes full width */
     box-sizing: border-box; /* Include padding in width */
-    margin-top: auto; /* Push it to the bottom if using flex layout */
-    position: relative; /* Change from fixed to relative */
+    margin-top: auto; /* Push footer to the bottom of the page */
 }
-
 
 footer a {
     color: #e0e0e0;
