@@ -336,7 +336,6 @@ header h1 {
     .contact-page .form-container {
         display: flex;
         justify-content: center; /* Center horizontally */
-		left: 0;
         padding: 10px; /* Add some padding */
         position: relative; /* Ensure correct positioning */
         width: 100%; /* Full width of viewport */
@@ -344,13 +343,13 @@ header h1 {
     }
 
     .contact-page iframe {
-        width: 100%; /* Full width of the container */
-        height: 500 px; /* Adjust height for mobile devices */
+        width: 90%; /* Increase width of iframe on mobile devices */
+        height: 500px; /* Adjust height if needed */
         max-width: 100%; /* Prevent overflow */
         border: none; /* Ensure no border */
         box-sizing: border-box; /* Include padding and borders in width */
         display: block; /* Ensure it behaves as a block element */
-		transform: scale(0.8) translateY(-10%);
+        transform: none; /* Remove any transforms affecting width */
     }
 
     .contact-page h2 {
@@ -358,7 +357,6 @@ header h1 {
         margin: 10px 0; /* Add margin for spacing */
         padding: 0; /* Remove padding if present */
         font-size: 1.5em; /* Adjust font size */
-		left: 0;
     }
 }
 
