@@ -345,7 +345,7 @@ header h1 {
 
     .contact-page iframe {
         width: 100%; /* Full width of the container */
-        height: 900 px; /* Adjust height for mobile devices */
+        height: 500 px; /* Adjust height for mobile devices */
         max-width: 100%; /* Prevent overflow */
         border: none; /* Ensure no border */
         box-sizing: border-box; /* Include padding and borders in width */
