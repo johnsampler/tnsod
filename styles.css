@@ -331,18 +331,6 @@ header h1 {
 	footer {
 		margin-top: 10px;
 	}
-	
-	#feedback iframe {
-        margin-left: 0; /* Remove left margin for mobile devices */
-        width: 90%; /* Use 90% of the viewport width on mobile */
-        height: 700px; /* Keep the same height */
-    }
-
-    #feedback h2 {
-        margin-right: 0; /* Reset margin for heading on mobile */
-        text-align: center; /* Center the heading text */
-        padding: 10px; /* Add some padding for better spacing */
-    }
 }
 
 
