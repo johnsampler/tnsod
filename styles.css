@@ -350,7 +350,6 @@ header h1 {
         border: none; /* Ensure no border */
         box-sizing: border-box; /* Include padding and borders in width */
         display: block; /* Ensure it behaves as a block element */
-		transform: translateY(-5%);
     }
 
     .contact-page h2 {
