@@ -234,7 +234,7 @@ header h1 {
 /* Adjust the h2 element */
 .contact-page h2 {
     position: relative;
-    left: 520px; /* Move 125px to the right */
+    left: 520px; /* Move 520px to the right */
 }
 
 
@@ -335,6 +335,7 @@ header h1 {
     .contact-page .form-container {
         display: flex;
         justify-content: center; /* Center horizontally */
+		left: 0;
         padding: 10px; /* Add some padding */
         position: relative; /* Ensure correct positioning */
         width: 100%; /* Full width of viewport */
@@ -355,6 +356,7 @@ header h1 {
         margin: 10px 0; /* Add margin for spacing */
         padding: 0; /* Remove padding if present */
         font-size: 1.5em; /* Adjust font size */
+		left: 0;
     }
 }
 
