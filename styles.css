@@ -345,11 +345,12 @@ header h1 {
 
     .contact-page iframe {
         width: 100%; /* Full width of the container */
-        height: 820px; /* Adjust height for mobile devices */
+        height: 500px; /* Adjust height for mobile devices */
         max-width: 100%; /* Prevent overflow */
         border: none; /* Ensure no border */
         box-sizing: border-box; /* Include padding and borders in width */
         display: block; /* Ensure it behaves as a block element */
+		transform: scale(0.7);
     }
 
     .contact-page h2 {
