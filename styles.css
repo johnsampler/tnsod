@@ -332,15 +332,27 @@ header h1 {
 		margin-top: 10px;
 	}
 	
-	.contact-page .form-container {
-        padding: 10px; /* Adjust padding if needed */
-        width: 100%; /* Full width of the viewport */
+    .contact-page .form-container {
+        width: 100%; /* Ensure full width of the viewport */
+        padding: 10px; /* Adjust padding for mobile */
         box-sizing: border-box; /* Include padding in width */
+        display: flex;
+        justify-content: center; /* Center the form horizontally */
+        position: relative; /* Relative positioning for correct placement */
     }
 
     .contact-page iframe {
-        height: auto; /* Adjust height automatically */
-        max-height: 80vh; /* Limit the height to 80% of the viewport height */
+        width: 100%; /* Full width of the container */
+        height: 500px; /* Adjust height for better mobile fit */
+        max-width: 100%; /* Ensure iframe does not overflow */
+        box-sizing: border-box; /* Include padding and borders in width */
+    }
+
+    .contact-page h2 {
+        text-align: center; /* Center text horizontally */
+        margin-left: 0; /* Remove any left margin */
+        padding: 10px; /* Add padding for spacing */
+        font-size: 1.5em; /* Adjust font size for better readability */
     }
 }
 
