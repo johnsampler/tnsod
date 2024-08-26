@@ -331,6 +331,17 @@ header h1 {
 	footer {
 		margin-top: 10px;
 	}
+	
+	.contact-page .form-container {
+        padding: 10px; /* Adjust padding if needed */
+        width: 100%; /* Full width of the viewport */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    .contact-page iframe {
+        height: auto; /* Adjust height automatically */
+        max-height: 80vh; /* Limit the height to 80% of the viewport height */
+    }
 }
 
 
