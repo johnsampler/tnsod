@@ -344,7 +344,7 @@ header h1 {
     }
 
     .contact-page iframe {
-        width: 100%; /* Full width of the container */
+        width: 120%; /* Full width of the container */
         height: 500px; /* Adjust height for mobile devices */
         max-width: 100%; /* Prevent overflow */
         border: none; /* Ensure no border */
