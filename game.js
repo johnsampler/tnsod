@@ -8,15 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Clear any existing words (if reloading)
             wordsContainer.innerHTML = '';
 
-            // Shuffle and add words to the game container
-            const shuffledWords = shuffleWords(data.words);
+            // Create paired word elements
+            const pairedWords = createPairedWords(data.words);
 
+            // Shuffle the paired words
+            const shuffledWords = shuffleArray(pairedWords);
+
+            // Add words to the game container
             shuffledWords.forEach(wordObj => {
-                const enWord = createWordElement(wordObj.en, 'en', wordObj.pair);
-                const esWord = createWordElement(wordObj.es, 'es', wordObj.pair);
-
-                wordsContainer.appendChild(enWord);
-                wordsContainer.appendChild(esWord);
+                const wordElement = createWordElement(wordObj.text, wordObj.lang, wordObj.pair);
+                wordsContainer.appendChild(wordElement);
             });
 
             initializeGame();
@@ -25,12 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Fetch error:', error);
         });
 
-    function shuffleWords(words) {
-        // Create an array with each word object twice (one for each language)
-        const pairedWords = words.flatMap(word => [word, { ...word, en: word.es, es: word.en }]);
+    function createPairedWords(words) {
+        return words.flatMap(word => [
+            { text: word.en, lang: 'en', pair: word.pair },
+            { text: word.es, lang: 'es', pair: word.pair }
+        ]);
+    }
 
-        // Shuffle the array
-        return pairedWords.sort(() => Math.random() - 0.5);
+    function shuffleArray(array) {
+        return array.sort(() => Math.random() - 0.5);
     }
 
     function createWordElement(text, lang, pair) {
