@@ -22,13 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Fetch error:', error);
         });
 
-	function shuffleWords(words) {
-		// Shuffle the original array to ensure random placement
-		return words
-			.map(word => [word, word])  // Create pairs of each word
-			.flat()                    // Flatten the array
-			.sort(() => Math.random() - 0.5); // Shuffle the array
-	}
+    function shuffleWords(words) {
+        return words.flatMap(word => [word, word])
+                    .sort(() => Math.random() - 0.5);
+    }
 
     function createWordElement(text, lang, pair) {
         const wordDiv = document.createElement('div');
