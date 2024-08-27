@@ -1,0 +1,8 @@
+{
+    "words": [
+        {"en": "House", "es": "Casa", "pair": "1"},
+        {"en": "Car", "es": "Coche", "pair": "2"},
+        {"en": "Book", "es": "Libro", "pair": "3"},
+        {"en": "School", "es": "Escuela", "pair": "4"}
+    ]
+}
