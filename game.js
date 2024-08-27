@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             const wordsContainer = document.querySelector('.game-container');
 
+            // Clear any existing words (if reloading)
+            wordsContainer.innerHTML = '';
+
             // Shuffle and add words to the game container
             const shuffledWords = shuffleWords(data.words);
 
@@ -23,8 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     function shuffleWords(words) {
-        return words.flatMap(word => [word, word])
-                    .sort(() => Math.random() - 0.5);
+        // Create an array with each word object twice (one for each language)
+        const pairedWords = words.flatMap(word => [word, { ...word, en: word.es, es: word.en }]);
+
+        // Shuffle the array
+        return pairedWords.sort(() => Math.random() - 0.5);
     }
 
     function createWordElement(text, lang, pair) {
