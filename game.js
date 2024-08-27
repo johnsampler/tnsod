@@ -1,94 +1,76 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Fetch vocabulary from JSON
+    const numberOfWordsToShow = 10; // Change this number to show more or fewer words
+
     fetch('https://johnsampler.github.io/tnsod/vocabulary.json')
         .then(response => response.json())
         .then(data => {
-            const wordsContainer = document.querySelector('.game-container');
+            const words = data.words;
+            // Shuffle the words array
+            words.sort(() => Math.random() - 0.5);
 
-            // Clear any existing words (if reloading)
-            wordsContainer.innerHTML = '';
+            // Slice the array to get the desired number of words
+            const selectedWords = words.slice(0, numberOfWordsToShow);
 
-            // Create paired word elements
-            const pairedWords = createPairedWords(data.words);
+            // Create and display the word elements
+            const gameContainer = document.querySelector('.game-container');
+            gameContainer.innerHTML = ''; // Clear existing content
 
-            // Shuffle the paired words
-            const shuffledWords = shuffleArray(pairedWords);
-
-            // Add words to the game container
-            shuffledWords.forEach(wordObj => {
-                const wordElement = createWordElement(wordObj.text, wordObj.lang, wordObj.pair);
-                wordsContainer.appendChild(wordElement);
-            });
-
-            initializeGame();
-        })
-        .catch(error => {
-            console.error('Fetch error:', error);
-        });
-
-    function createPairedWords(words) {
-        return words.flatMap(word => [
-            { text: word.en, lang: 'en', pair: word.pair },
-            { text: word.es, lang: 'es', pair: word.pair }
-        ]);
-    }
-
-    function shuffleArray(array) {
-        return array.sort(() => Math.random() - 0.5);
-    }
-
-    function createWordElement(text, lang, pair) {
-        const wordDiv = document.createElement('div');
-        wordDiv.classList.add('word');
-        wordDiv.setAttribute('data-lang', lang);
-        wordDiv.setAttribute('data-pair', pair);
-        wordDiv.textContent = text;
-        return wordDiv;
-    }
-
-    function initializeGame() {
-        const words = document.querySelectorAll('.word');
-        let selectedWords = [];
-        let clickable = true;
-
-        function resetSelection() {
             selectedWords.forEach(word => {
-                word.classList.remove('incorrect', 'selected');
+                const wordDiv = document.createElement('div');
+                wordDiv.className = 'word';
+                wordDiv.dataset.lang = 'en';
+                wordDiv.dataset.pair = word.en;
+                wordDiv.textContent = word.en;
+
+                gameContainer.appendChild(wordDiv);
+
+                const translationDiv = document.createElement('div');
+                translationDiv.className = 'word';
+                translationDiv.dataset.lang = 'es';
+                translationDiv.dataset.pair = word.en;
+                translationDiv.textContent = word.es;
+
+                gameContainer.appendChild(translationDiv);
             });
-            selectedWords = [];
-            clickable = true;
-        }
 
-        function hideMatchedWords(first, second) {
-            setTimeout(() => {
-                first.style.display = 'none';
-                second.style.display = 'none';
-            }, 300);
-        }
-
-        words.forEach(word => {
-            word.addEventListener('click', function() {
-                if (clickable && !this.classList.contains('selected')) {
-                    this.classList.add('selected');
-                    selectedWords.push(this);
-
-                    if (selectedWords.length === 2) {
-                        const [first, second] = selectedWords;
-                        clickable = false;
-
-                        if (first.dataset.pair === second.dataset.pair) {
-                            first.classList.add('correct');
-                            second.classList.add('correct');
-                            hideMatchedWords(first, second);
-                            resetSelection();
-                        } else {
-                            first.classList.add('incorrect');
-                            second.classList.add('incorrect');
-                            setTimeout(resetSelection, 1000);
-                        }
-                    }
-                }
-            });
-        });
-    }
+            // Add game logic here (assuming game logic code is included)
+            initializeGame(); // Call function to initialize game logic
+        })
+        .catch(error => console.error('Error fetching vocabulary:', error));
 });
+
+function initializeGame() {
+    const words = document.querySelectorAll('.word');
+    let selectedWords = [];
+
+    words.forEach(word => {
+        word.addEventListener('click', function() {
+            if (selectedWords.length < 2) {
+                this.classList.add('selected');
+                selectedWords.push(this);
+
+                if (selectedWords.length === 2) {
+                    const [first, second] = selectedWords;
+                    if (first.dataset.pair === second.dataset.pair) {
+                        first.classList.add('correct');
+                        second.classList.add('correct');
+                        setTimeout(() => {
+                            first.style.display = 'none';
+                            second.style.display = 'none';
+                        }, 300); // Delay for smooth disappearance
+                    } else {
+                        first.classList.add('incorrect');
+                        second.classList.add('incorrect');
+                        setTimeout(() => {
+                            first.classList.remove('incorrect');
+                            second.classList.remove('incorrect');
+                            first.classList.remove('selected');
+                            second.classList.remove('selected');
+                        }, 1000); // Delay for showing incorrect feedback
+                    }
+                    selectedWords = [];
+                }
+            }
+        });
+    });
+}
