@@ -28,13 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     function createWordPairs(words) {
-        return words.flatMap(word => [
-            { en: word.en, es: word.es, pair: word.pair },
-            { en: word.en, es: word.es, pair: word.pair }
-        ]);
+        // Create pairs of words and ensure each word is only used once in its pair
+        let pairs = [];
+        words.forEach(word => {
+            pairs.push({ text: word.en, lang: 'en', pair: word.pair });
+            pairs.push({ text: word.es, lang: 'es', pair: word.pair });
+        });
+        return pairs;
     }
 
     function shuffleArray(array) {
+        // Shuffle the array in place
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
