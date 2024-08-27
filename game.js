@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const numberOfWordsToShow = 10; // Change this number to show more or fewer words
+    const numberOfWordsToShow = 20; // Change this number to show more or fewer words
 
     fetch('https://johnsampler.github.io/tnsod/vocabulary.json')
         .then(response => response.json())
@@ -11,26 +11,28 @@ document.addEventListener('DOMContentLoaded', function() {
             // Slice the array to get the desired number of words
             const selectedWords = words.slice(0, numberOfWordsToShow);
 
+            // Create a combined array of English and Spanish pairs
+            const displayWords = [];
+            selectedWords.forEach(word => {
+                displayWords.push({ lang: 'en', text: word.en, pair: word.en });
+                displayWords.push({ lang: 'es', text: word.es, pair: word.en });
+            });
+
+            // Shuffle the combined array
+            displayWords.sort(() => Math.random() - 0.5);
+
             // Create and display the word elements
             const gameContainer = document.querySelector('.game-container');
             gameContainer.innerHTML = ''; // Clear existing content
 
-            selectedWords.forEach(word => {
+            displayWords.forEach(word => {
                 const wordDiv = document.createElement('div');
                 wordDiv.className = 'word';
-                wordDiv.dataset.lang = 'en';
-                wordDiv.dataset.pair = word.en;
-                wordDiv.textContent = word.en;
+                wordDiv.dataset.lang = word.lang;
+                wordDiv.dataset.pair = word.pair;
+                wordDiv.textContent = word.text;
 
                 gameContainer.appendChild(wordDiv);
-
-                const translationDiv = document.createElement('div');
-                translationDiv.className = 'word';
-                translationDiv.dataset.lang = 'es';
-                translationDiv.dataset.pair = word.en;
-                translationDiv.textContent = word.es;
-
-                gameContainer.appendChild(translationDiv);
             });
 
             // Add game logic here (assuming game logic code is included)
