@@ -1,25 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch vocabulary from JSON
-    fetch('vocabulary.json')
+    fetch('https://johnsampler.github.io/tnsod/vocabulary.json')
         .then(response => response.json())
         .then(data => {
             const wordsContainer = document.querySelector('.game-container');
 
-            // Shuffle the words to ensure random placement
+            // Shuffle and add words to the game container
             const shuffledWords = shuffleWords(data.words);
 
-            // Add words to the game container
             shuffledWords.forEach(wordObj => {
                 const enWord = createWordElement(wordObj.en, 'en', wordObj.pair);
                 const esWord = createWordElement(wordObj.es, 'es', wordObj.pair);
 
-                // Append words to the container
                 wordsContainer.appendChild(enWord);
                 wordsContainer.appendChild(esWord);
             });
 
-            // Initialize game logic after words are loaded
             initializeGame();
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
         });
 
     function shuffleWords(words) {
