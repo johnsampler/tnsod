@@ -8,12 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // Clear any existing content in the game container
             wordsContainer.innerHTML = '';
 
-            // Shuffle and add words to the game container
-            const shuffledWords = shuffleWords(data.words);
+            // Create pairs and shuffle words
+            const wordPairs = createWordPairs(data.words);
+            const shuffledPairs = shuffleArray(wordPairs);
 
-            shuffledWords.forEach(wordObj => {
-                const enWord = createWordElement(wordObj.en, 'en', wordObj.pair);
-                const esWord = createWordElement(wordObj.es, 'es', wordObj.pair);
+            // Add words to the game container
+            shuffledPairs.forEach(wordPair => {
+                const enWord = createWordElement(wordPair.en, 'en', wordPair.pair);
+                const esWord = createWordElement(wordPair.es, 'es', wordPair.pair);
 
                 wordsContainer.appendChild(enWord);
                 wordsContainer.appendChild(esWord);
@@ -25,17 +27,19 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Fetch error:', error);
         });
 
-    function shuffleWords(words) {
-        // Create pairs of words
-        const pairedWords = words.flatMap(word => [word, word]);
+    function createWordPairs(words) {
+        return words.flatMap(word => [
+            { en: word.en, es: word.es, pair: word.pair },
+            { en: word.en, es: word.es, pair: word.pair }
+        ]);
+    }
 
-        // Shuffle the array
-        for (let i = pairedWords.length - 1; i > 0; i--) {
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [pairedWords[i], pairedWords[j]] = [pairedWords[j], pairedWords[i]];
+            [array[i], array[j]] = [array[j], array[i]];
         }
-
-        return pairedWords;
+        return array;
     }
 
     function createWordElement(text, lang, pair) {
