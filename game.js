@@ -4,18 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const wordsContainer = document.querySelector('.game-container');
-            
-            // Clear any existing content in the game container
-            wordsContainer.innerHTML = '';
 
-            // Create pairs and shuffle words
-            const wordPairs = createWordPairs(data.words);
-            const shuffledPairs = shuffleArray(wordPairs);
+            // Shuffle and add words to the game container
+            const shuffledWords = shuffleWords(data.words);
 
-            // Add words to the game container
-            shuffledPairs.forEach(wordPair => {
-                const enWord = createWordElement(wordPair.en, 'en', wordPair.pair);
-                const esWord = createWordElement(wordPair.es, 'es', wordPair.pair);
+            shuffledWords.forEach(wordObj => {
+                const enWord = createWordElement(wordObj.en, 'en', wordObj.pair);
+                const esWord = createWordElement(wordObj.es, 'es', wordObj.pair);
 
                 wordsContainer.appendChild(enWord);
                 wordsContainer.appendChild(esWord);
@@ -27,23 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Fetch error:', error);
         });
 
-    function createWordPairs(words) {
-        // Create pairs of words and ensure each word is only used once in its pair
-        let pairs = [];
-        words.forEach(word => {
-            pairs.push({ text: word.en, lang: 'en', pair: word.pair });
-            pairs.push({ text: word.es, lang: 'es', pair: word.pair });
-        });
-        return pairs;
-    }
-
-    function shuffleArray(array) {
-        // Shuffle the array in place
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
+    function shuffleWords(words) {
+        return words.flatMap(word => [word, word])
+                    .sort(() => Math.random() - 0.5);
     }
 
     function createWordElement(text, lang, pair) {
