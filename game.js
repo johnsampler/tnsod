@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Fetch vocabulary from JSON
     fetch('https://johnsampler.github.io/tnsod/vocabulary.json')
         .then(response => response.json())
         .then(data => {
             const wordsContainer = document.querySelector('.game-container');
             
-            // Clear the container before adding new words
+            // Clear any existing content in the game container
             wordsContainer.innerHTML = '';
 
             // Shuffle and add words to the game container
@@ -25,10 +26,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     function shuffleWords(words) {
-        return words
-            .map(word => [word, word])  // Create pairs of each word
-            .flat()                    // Flatten the array
-            .sort(() => Math.random() - 0.5); // Shuffle the array
+        // Create pairs of words
+        const pairedWords = words.flatMap(word => [word, word]);
+
+        // Shuffle the array
+        for (let i = pairedWords.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [pairedWords[i], pairedWords[j]] = [pairedWords[j], pairedWords[i]];
+        }
+
+        return pairedWords;
     }
 
     function createWordElement(text, lang, pair) {
