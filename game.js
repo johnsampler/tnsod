@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const numberOfWordsToShow = 20; // Change this number to show more or fewer words
 
     fetch('https://johnsampler.github.io/tnsod/vocabulary.json')
@@ -46,7 +46,14 @@ function initializeGame() {
     let selectedWords = [];
 
     words.forEach(word => {
-        word.addEventListener('click', function() {
+        word.addEventListener('click', function () {
+            // If the clicked word is already selected, deselect it
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+                selectedWords = selectedWords.filter(w => w !== this);
+                return; // Exit the function early
+            }
+
             if (selectedWords.length < 2) {
                 this.classList.add('selected');
                 selectedWords.push(this);
