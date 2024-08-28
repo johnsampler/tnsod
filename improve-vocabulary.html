@@ -27,6 +27,10 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
             font-size: 1.2em;
+			user-select: none; /* Prevent text selection */
+			-webkit-user-select: none; /* For Safari */
+			-moz-user-select: none; /* For Firefox */
+			-ms-user-select: none; /* For Internet Explorer and Edge */
         }
 
         .word.selected {
