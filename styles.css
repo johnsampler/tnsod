@@ -237,7 +237,29 @@ header h1 {
     left: 32.1%; /* Move 32.1% to the right */
 }
 
+/* Ensures the content area centers everything within it */
+.select-lang {
+	text-align: center;
+}
 
+.langs{
+	font-size: 2em;
+	display: flex;
+    align-items: center; /* Aligns items vertically center */
+    margin: 25px 0; /* Adds some spacing between the language options */
+}
+
+.langs a{
+	text-decoration: none;
+	color: inherit;
+}
+
+.flag-image {
+    margin-right: 10px; /* Adds some spacing between the flag image and the text */
+    vertical-align: middle; /* Aligns the image vertically with the text */
+	margin-left: 45%;
+	
+}
 
 
 
