@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const numberOfWordsToShow = 20; // Change this number to show more or fewer words
+    const numberOfWordsToShow = 20; // Number of words to display
+    const selectedLanguage = 'es'; // Example: 'es', 'de', 'fr', 'it', 'pt', 'fi' - should be dynamically set
 
     fetch('https://johnsampler.github.io/tnsod/vocabulary.json')
         .then(response => response.json())
@@ -11,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
             // Slice the array to get the desired number of words
             const selectedWords = words.slice(0, numberOfWordsToShow);
 
-            // Create a combined array of English and Spanish pairs
+            // Create a combined array of English and selected language pairs
             const displayWords = [];
             selectedWords.forEach(word => {
                 displayWords.push({ lang: 'en', text: word.en, pair: word.en });
-                displayWords.push({ lang: 'es', text: word.es, pair: word.en });
+                displayWords.push({ lang: selectedLanguage, text: word[selectedLanguage], pair: word.en });
             });
 
             // Shuffle the combined array
@@ -35,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 gameContainer.appendChild(wordDiv);
             });
 
-            // Add game logic here (assuming game logic code is included)
-            initializeGame(); // Call function to initialize game logic
+            // Initialize game logic
+            initializeGame();
         })
         .catch(error => console.error('Error fetching vocabulary:', error));
 });

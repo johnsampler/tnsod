@@ -238,28 +238,59 @@ header h1 {
 }
 
 /* Ensures the content area centers everything within it */
-.select-lang {
-	text-align: center;
+.language-selection {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack heading and grid vertically */
+    align-items: center;
+    padding: 20px;
 }
 
-.langs{
-	font-size: 2em;
-	display: flex;
-    align-items: center; /* Aligns items vertically center */
-    margin: 25px 0; /* Adds some spacing between the language options */
+.language-selection h2 {
+    text-align: center;
+    font-size: 2em; /* Large text size for visibility */
+    color: #e0e0e0; /* Match the color of the header text */
+    margin-bottom: 20px; /* Space between heading and cards */
+    font-weight: bold; /* Make text bold */
 }
 
-.langs a{
-	text-decoration: none;
-	color: inherit;
+
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.flag-image {
-    margin-right: 10px; /* Adds some spacing between the flag image and the text */
-    vertical-align: middle; /* Aligns the image vertically with the text */
-	margin-left: 45%;
-	
+.language-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333; /* Dark gray color matching header and footer */
+    color: white; /* Ensure text is readable */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    text-decoration: none; /* Remove default link underline */
+    transition: background-color 0.3s ease;
 }
+
+.language-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.language-card span {
+    font-size: 1.2em;
+}
+
+.language-card:hover {
+    background-color: #4CAF50; /* Change color on hover for better contrast */
+}
+
 
 
 
@@ -383,10 +414,6 @@ header h1 {
         font-size: 1.5em; /* Adjust font size */
 		left: 0;
     }
-	
-	.flag-image {
-		margin-left: 35%;
-	}
 }
 
 
