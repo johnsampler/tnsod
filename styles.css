@@ -417,6 +417,8 @@ header h1 {
 
     .language-selection {
         padding: 10px; /* Reduce padding for smaller screens */
+        width: 100%; /* Ensure full width */
+        box-sizing: border-box; /* Include padding in width calculation */
     }
 
     .language-selection h2 {
@@ -426,13 +428,17 @@ header h1 {
 
     .language-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Fully responsive with auto-fill */
-        gap: 15px; /* Reduce gap between items */
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* More responsive grid */
+        gap: 10px; /* Reduce gap between items */
+        width: 100%; /* Ensure full width for the grid container */
+        margin: 0; /* Remove any default margins */
+        box-sizing: border-box; /* Ensure the grid fits within its container */
     }
 
     .language-card {
-        padding: 15px; /* Less padding to fit smaller screens */
-        max-width: 100%; /* Ensure the card does not exceed the width */
+        padding: 10px; /* Reduce padding for better fit on mobile */
+        max-width: 100%; /* Ensure cards do not exceed container width */
+        box-sizing: border-box; /* Include padding in width calculation */
     }
 
     .language-card img {
