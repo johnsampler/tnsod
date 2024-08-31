@@ -426,12 +426,13 @@ header h1 {
 
     .language-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Make grid responsive */
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Fully responsive with auto-fill */
         gap: 15px; /* Reduce gap between items */
     }
 
     .language-card {
         padding: 15px; /* Less padding to fit smaller screens */
+        max-width: 100%; /* Ensure the card does not exceed the width */
     }
 
     .language-card img {
