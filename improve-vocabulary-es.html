@@ -10,61 +10,69 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <style>
-        /* Add specific styles for the game */
-        .game-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-        }
+	.game-container {
+		display: flex;
+		flex-wrap: wrap; /* Allows items to wrap onto new lines */
+		justify-content: center;
+		gap: 15px;
+		margin: 20px 0;
+	}
 
-        .word {
-            background-color: #333;
-            color: #e0e0e0;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-            font-size: 1.2em;
-			user-select: none; /* Prevent text selection */
-			-webkit-user-select: none; /* For Safari */
-			-moz-user-select: none; /* For Firefox */
-			-ms-user-select: none; /* For Internet Explorer and Edge */
-        }
+	.word {
+		background-color: #333;
+		color: #e0e0e0;
+		padding: 10px 20px;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.3s, transform 0.3s;
+		font-size: 1.2em;
+		user-select: none; /* Prevent text selection */
+		-webkit-user-select: none; /* For Safari */
+		-moz-user-select: none; /* For Firefox */
+		-ms-user-select: none; /* For Internet Explorer and Edge */
+		text-align: center; /* Center text inside the word box */
+		box-sizing: border-box; /* Include padding in width calculations */
+		flex: 1 1 calc(25% - 15px); /* Flex to wrap and fit within the container */
+		max-width: calc(25% - 15px); /* Ensures each item takes up to 25% of container width */
+	}
 
-        .word.selected {
-            background-color: #4caf50; /* Green for selected words */
-        }
+	/* Adjustments for when word is selected, correct or incorrect */
+	.word.selected {
+		background-color: #4caf50; /* Green for selected words */
+	}
 
-        .word.correct {
-            background-color: #4caf50; /* Green for matched words */
-            transform: scale(0.5); /* Shrink effect */
-        }
+	.word.correct {
+		background-color: #4caf50; /* Green for matched words */
+		transform: scale(0.8); /* Slight shrink effect */
+	}
 
-        .word.incorrect {
-            background-color: #f44336; /* Red for incorrect words */
-            transform: scale(1.2); /* Slightly enlarge for feedback */
-        }
-		.titl-cent {
-			text-align: center;
+	.word.incorrect {
+		background-color: #f44336; /* Red for incorrect words */
+		transform: scale(1.1); /* Slightly enlarge for feedback */
+	}
+
+	/* Center text */
+	.titl-cent {
+		text-align: center;
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+		.game-container {
+			gap: 10px; /* Reduce gap on smaller screens */
+			margin: 10px 0; /* Less margin on smaller screens */
 		}
-		@media (max-width: 768px) {
-			.game-container {
-				gap: 10px; /* Reduce gap on smaller screens */
-				margin: 10px 0; /* Less margin on smaller screens */
-			}
 
-			.word {
-				font-size: 1em; /* Smaller font size for smaller screens */
-				padding: 8px 15px; /* Reduce padding for smaller screens */
-				max-width: calc(50% - 20px); /* Ensure two items per row with gap */
-			}
-
-			.word.correct, .word.incorrect {
-				transform: scale(1); /* Reset scale to prevent too much resizing */
-			}
+		.word {
+			font-size: 1em; /* Smaller font size for smaller screens */
+			padding: 8px 12px; /* Reduce padding for smaller screens */
+			max-width: calc(50% - 10px); /* Ensure two items per row with gap */
 		}
+
+		.word.correct, .word.incorrect {
+			transform: scale(1); /* Reset scale to prevent too much resizing */
+		}
+	}
     </style>
 </head>
 <body>
