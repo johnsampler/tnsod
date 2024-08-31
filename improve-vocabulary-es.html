@@ -49,6 +49,22 @@
 		.titl-cent {
 			text-align: center;
 		}
+		@media (max-width: 768px) {
+			.game-container {
+				gap: 10px; /* Reduce gap on smaller screens */
+				margin: 10px 0; /* Less margin on smaller screens */
+			}
+
+			.word {
+				font-size: 1em; /* Smaller font size for smaller screens */
+				padding: 8px 15px; /* Reduce padding for smaller screens */
+				max-width: calc(50% - 20px); /* Ensure two items per row with gap */
+			}
+
+			.word.correct, .word.incorrect {
+				transform: scale(1); /* Reset scale to prevent too much resizing */
+			}
+		}
     </style>
 </head>
 <body>
