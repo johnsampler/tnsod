@@ -301,7 +301,7 @@ header h1 {
 /* Additional Mobile Adjustments */
 
 /* Ensure content is centered and fits well on mobile devices */
-@media (max-width: 1140px) {
+@media (max-width: 768px) {
     /* Reset negative margins or offsets */
     .index-page .text-center {
         margin-left: 0; /* Remove any left margin */
