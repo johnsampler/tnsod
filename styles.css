@@ -414,6 +414,32 @@ header h1 {
         font-size: 1.5em; /* Adjust font size */
 		left: 0;
     }
+	    .language-selection {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .language-selection h2 {
+        font-size: 1.5em; /* Smaller font size for the heading */
+        margin-bottom: 15px; /* Reduce margin for better spacing */
+    }
+
+    .language-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller columns for mobile */
+        gap: 15px; /* Reduce gap between items */
+    }
+
+    .language-card {
+        padding: 15px; /* Less padding to fit smaller screens */
+    }
+
+    .language-card img {
+        width: 80px; /* Smaller images */
+        margin-bottom: 8px; /* Reduce margin for better fit */
+    }
+
+    .language-card span {
+        font-size: 1em; /* Adjust text size for mobile readability */
+    }
 }
 
 
