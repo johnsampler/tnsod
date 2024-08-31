@@ -1,7 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     const numberOfWordsToShow = 20; // Change this number to show more or fewer words
 
-    fetch('https://johnsampler.github.io/tnsod/vocabulary.json')
+    // Function to extract the language tag from the current page URL
+    function getLanguageFromUrl() {
+        const regex = /improve-vocabulary-([a-z]{2})\.html/;
+        const match = window.location.pathname.match(regex);
+        return match ? match[1] : 'en'; // Default to 'en' if no match is found
+    }
+
+    const currentLanguage = getLanguageFromUrl();
+
+    // Build the URL for the vocabulary file based on the current language
+    const vocabUrl = `https://johnsampler.github.io/tnsod/vocabulary-${currentLanguage}.json`;
+
+    fetch(vocabUrl)
         .then(response => response.json())
         .then(data => {
             const words = data.words;
@@ -35,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 gameContainer.appendChild(wordDiv);
             });
 
-            // Add game logic here (assuming game logic code is included)
-            initializeGame(); // Call function to initialize game logic
+            // Initialize the game logic
+            initializeGame();
         })
         .catch(error => console.error('Error fetching vocabulary:', error));
 });
