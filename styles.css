@@ -414,7 +414,8 @@ header h1 {
         font-size: 1.5em; /* Adjust font size */
 		left: 0;
     }
-	    .language-selection {
+
+    .language-selection {
         padding: 10px; /* Reduce padding for smaller screens */
     }
 
@@ -424,7 +425,8 @@ header h1 {
     }
 
     .language-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller columns for mobile */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Make grid responsive */
         gap: 15px; /* Reduce gap between items */
     }
 
