@@ -24,10 +24,4 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://johnsampler.github.io/tnsod/improve-vocabulary-es.html</loc>
-    <lastmod>2025-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
 </urlset>
